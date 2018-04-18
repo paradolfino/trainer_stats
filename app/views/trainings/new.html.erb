@@ -1,0 +1,11 @@
+<h3>Trainings: <%= @trainings %></h3>
+<hr/>
+Log a Training:
+<%= form_for :training do |t| %>
+    <%= t.text_field :member, placeholder: "Member Name (Optional)" %><br/>
+    <%= t.text_field :company, placeholder: "Company Name (Optional)" %><br/>
+    <%= t.submit "Submit" %>
+<% end %>
+
+<hr/>
+<%= link_to "View the Trainings Log", trainings_path %>
