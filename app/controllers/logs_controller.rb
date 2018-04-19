@@ -10,6 +10,14 @@ class LogsController < ApplicationController
         @trainings = @log.trainings    
     end
     
+    def new
+        
+    end
+    
+    def create
+        
+    end
+    
     def edit; end
     
     def update
