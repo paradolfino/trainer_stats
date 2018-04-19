@@ -17,7 +17,7 @@ class LogsController < ApplicationController
     def create
         @log = Log.new(params_log)
         if @log.save
-           redirect_to log_path 
+           redirect_to @log
         else
             
         end
