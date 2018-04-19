@@ -4,4 +4,5 @@ class LogsController < ApplicationController
         @logs = Log.all
     end
     
+    
 end
