@@ -16,6 +16,11 @@ class LogsController < ApplicationController
     
     def create
         @log = Log.new(params_log)
+        if @log.save
+            
+        else
+            
+        end
     end
     
     def edit; end
