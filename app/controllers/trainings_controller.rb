@@ -30,7 +30,7 @@ class TrainingsController < ApplicationController
         @log = Log.find(params[:log_id])
         @training = @log.trainings.find(params[:id]) 
         if @training.update(training_params)
-            redirect_to log_trainings_path
+            redirect_to @log
         else
             render 'edit'
         end
@@ -38,7 +38,7 @@ class TrainingsController < ApplicationController
     
     def destroy
        @training.destroy 
-       redirect_to log_trainings_path
+       redirect_to @log
     end
     
     private
