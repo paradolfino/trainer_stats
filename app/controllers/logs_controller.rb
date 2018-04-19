@@ -16,6 +16,9 @@ class LogsController < ApplicationController
             format.json { 
                     json_response(@log.to_json(:include => [:trainings]))  
             }
+            format.html {
+                render :html
+            }
                 
         end
         
