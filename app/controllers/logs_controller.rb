@@ -5,6 +5,7 @@ class LogsController < ApplicationController
     def index
         @logs = Log.order('id DESC')
         respond_to do |format|
+            format.html
             format.json { json_response(@logs) or not_found}
         end
     end
@@ -13,10 +14,11 @@ class LogsController < ApplicationController
         @trainings = @log.trainings.order('id DESC')
         
         respond_to do |format|
+            format.html
             format.json { 
                     json_response(@log.to_json(:include => [:trainings]))  
             }
-            format.html
+            
                 
         end
         
