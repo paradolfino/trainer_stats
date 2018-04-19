@@ -1,6 +1,7 @@
 <%= form_for @log do |f| %>
     <%= f.label "What is the #{:title}?" %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %><br/>
+    <%= f.lable :active %><br/>
     <%= f.label :active, "Yes", value: "true" %>
     <%= f.radio_button :active, true, :checked => true %>
     <%= f.label :active, "No", value: "false" %>
