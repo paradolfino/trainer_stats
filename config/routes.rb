@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   post '/trainings/:id' => "trainings#update"
   resources :trainings
 =end
+  get '/logs/inactive' => 'logs#inactive', as: 'inactive_logs'
   root 'logs#index'
   resources :logs do
     resources :trainings
   end
-  get '/logs/inactive' => 'logs#inactive', as: 'inactive_logs'
+  
   get '/public/404.html' => 'logs#index'
 end
