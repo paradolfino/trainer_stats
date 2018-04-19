@@ -15,7 +15,7 @@ class LogsController < ApplicationController
     end
     
     def create
-        
+        @log = Log.new(params_log)
     end
     
     def edit; end
