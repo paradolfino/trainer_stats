@@ -17,7 +17,7 @@ class TrainingsController < ApplicationController
     end
     
     def edit
-        @log = Log.find(params[:log_id])
+        @log = Log.find(params[:id])
         @training = @log.trainings.find(params[:log_id]) 
     end
     
