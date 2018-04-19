@@ -2,7 +2,8 @@ class TrainingsController < ApplicationController
     #before_action :set_training, only: [:show, :edit, :update, :destroy]
     
     def index
-        
+        @log = Log.find(params[:log_id])
+        @trainigns = @log.trainings
     end
     
     def new
