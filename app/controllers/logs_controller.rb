@@ -11,7 +11,7 @@ class LogsController < ApplicationController
     end
     
     def new
-        
+       @log = Log.new 
     end
     
     def create
