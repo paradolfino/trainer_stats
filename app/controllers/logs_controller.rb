@@ -4,7 +4,9 @@ class LogsController < ApplicationController
     
     def index
         @logs = Log.all
-        format.json { json_response(@logs) }
+        respond_to do |format|
+            format.json { json_response(@logs) }
+        end
     end
     
     def show
