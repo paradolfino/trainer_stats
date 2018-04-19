@@ -5,7 +5,7 @@ class LogsController < ApplicationController
     def index
         @logs = Log.order('id DESC')
         respond_to do |format|
-            format.json { json_response(@logs) }
+            format.json { json_response(@logs) or not_found}
         end
     end
     
