@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   resources :trainings
 =end
   root 'logs#index'
-  post 'logs/:id/trainings' => 'trainings#create'
   resources :logs do
     resources :trainings
   end
