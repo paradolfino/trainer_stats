@@ -8,7 +8,7 @@ class LogsController < ApplicationController
         @total = Log.all.count
         respond_to do |format|
             format.html
-            format.json { json_response(@logs) or not_found}
+            format.json { json_response(@logs)}
         end
     end
     
