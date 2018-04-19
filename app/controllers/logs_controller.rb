@@ -1,5 +1,7 @@
 class LogsController < ApplicationController
     
+    before_action :set_log, only: [:show, :edit, :destroy]
+    
     def index
         @logs = Log.all
     end
