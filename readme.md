@@ -10,3 +10,5 @@
 ##### 19/04/2018: 19:08 - 19:21:pool[set up json response and counts]
 
 ##### 19/04/2018: 19:21 - 19:41:pool[set up 404]
+
+##### 19/04/2018: 19:41 - 21:34:pool[start work on styling views]
