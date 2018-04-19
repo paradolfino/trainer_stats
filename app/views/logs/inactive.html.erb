@@ -1,4 +1,4 @@
-<h3>Active Logs (<%= @active %>/<%= @total %>) [<small>with a total of (<%= @total_trainings %>) trainings logged.]</small></h3>
+<h3>Inactive Logs (<%= @inactive %>/<%= @total %>)</h3>
 <hr/>
 <table>
     <thead>
@@ -21,4 +21,4 @@
     </tbody>
 </table>
 
-<%= link_to "Create a new Log", new_log_path %> | <%= link_to "View Inactive Logs", inactive_logs_path %>
+<%= link_to "Create a new Log", new_log_path %> | <%= link_to "View Active Logs", logs_path %>

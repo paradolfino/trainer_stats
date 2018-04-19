@@ -1,8 +1,7 @@
 
-[create log model, controller, routes, controller actions, views; log and training are connected and training is nested under log]
-### 19/04/2018[16:44 - 18:52]:
-* create logs model, reference trainings with log, fix routes to have nested
-* create logs controller, create actions for controller
-* create views for logs, create form for new/edit
-* fix controllers to route correctly
+[fix to controllers - now all actions are correctly mapped, add private methods for totalling trainings and add action for inactive logs plus routes and views]
+### 19/04/2018[19:08 - 21:34]:
+* set up json response and counts
+* set up 404
+* start work on styling views
 

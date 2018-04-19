@@ -37,8 +37,10 @@ class TrainingsController < ApplicationController
     end
     
     def destroy
-       @training.destroy 
-       redirect_to @log
+        @log = Log.find(params[:id])
+        @training = @log.trainings.find(params[:log_id]) 
+        @training.destroy 
+        redirect_to @log
     end
     
     private
