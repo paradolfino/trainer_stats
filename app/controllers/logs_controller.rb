@@ -4,6 +4,8 @@ class LogsController < ApplicationController
     
     def index
         @logs = Log.where(active: true).order('id DESC')
+        @active = Log.where(active: true).count
+        @total = Log.all.count
         respond_to do |format|
             format.html
             format.json { json_response(@logs) or not_found}
