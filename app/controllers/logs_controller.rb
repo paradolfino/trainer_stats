@@ -23,7 +23,7 @@ class LogsController < ApplicationController
     private
     
         def set_log
-            
+           @log = Log.find(params[:id]) 
         end
         
         def params_log
