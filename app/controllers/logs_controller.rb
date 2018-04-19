@@ -21,6 +21,10 @@ class LogsController < ApplicationController
     end
     
     private
+    
+        def set_log
+            
+        end
         
         def params_log
             params.require(:log).permit(:title, :active) 
