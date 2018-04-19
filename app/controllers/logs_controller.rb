@@ -10,7 +10,8 @@ class LogsController < ApplicationController
     end
     
     def show
-        @trainings = @log.trainings    
+        @trainings = @log.trainings
+        json_response(@log.to_json(:include => [:trainings]))
     end
     
     def new
