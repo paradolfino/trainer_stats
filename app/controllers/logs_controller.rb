@@ -10,7 +10,7 @@ class LogsController < ApplicationController
     end
     
     def show
-        @trainings = @log.trainings
+        @trainings = @log.trainings.order('id DESC')
         respond_to do |format|
             format.json { json_response(@log.to_json(:include => [:trainings])) }
         end
