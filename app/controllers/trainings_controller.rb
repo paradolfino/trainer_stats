@@ -15,7 +15,7 @@ class TrainingsController < ApplicationController
         @log = Log.find(params[:log_id])
         @training = @log.trainings.build(training_params)
         if @training.save
-            redirect_to log_trainings_path
+            redirect_to @log
         else
             render 'new'
         end
