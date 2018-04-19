@@ -37,8 +37,8 @@ class TrainingsController < ApplicationController
     end
     
     def destroy
-        @log = Log.find(params[:log_id])
-        @training = @log.trainings.find(params[:id]) 
+        @log = Log.find(params[:id])
+        @training = @log.trainings.find(params[:log_id]) 
         @training.destroy 
         redirect_to @log
     end
