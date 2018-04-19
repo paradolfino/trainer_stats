@@ -86,7 +86,7 @@ class LogsController < ApplicationController
         def all_trainings(logs)
             training_arr = []
             logs.each do |l|
-                 training_arr << l.trainings.count
+                 training_arr.push(l.trainings.count)
             end
         end
         
