@@ -54,10 +54,10 @@ class LogsController < ApplicationController
     private
     
         def set_log
-           if Log.where(id: params[:id])
-               not_found
-           else
+           if Log.where(id: params[:id]).exists?
                @log = Log.find(params[:id])
+           else
+               not_found
                
            end
         end
