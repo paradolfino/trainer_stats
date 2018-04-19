@@ -40,7 +40,7 @@ class TrainingsController < ApplicationController
         end
         
         def set_training
-            @log = Log.find(params[:id])
+            @log = Log.find(params[:log_id])
             @training = @log.trainings.find(params[:id]) 
         end
 end
