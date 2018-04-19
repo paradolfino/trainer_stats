@@ -3,6 +3,7 @@ class CreateTrainings < ActiveRecord::Migration[5.2]
     create_table :trainings do |t|
       t.string :member
       t.string :company
+      t.references :log
       t.timestamps
     end
   end
