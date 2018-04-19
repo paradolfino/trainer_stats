@@ -19,4 +19,10 @@ class LogsController < ApplicationController
     def destroy
         
     end
+    
+    private
+        
+        def params_log
+            
+        end
 end
