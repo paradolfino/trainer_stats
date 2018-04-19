@@ -19,7 +19,7 @@ class LogsController < ApplicationController
         if @log.save
            redirect_to @log
         else
-            
+            render 'new'
         end
     end
     
