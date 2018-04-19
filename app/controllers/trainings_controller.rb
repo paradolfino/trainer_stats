@@ -11,7 +11,8 @@ class TrainingsController < ApplicationController
     end
     
     def create
-        @training = Training.new(training_params)
+        @log = Log.find(params[:id])
+        @training = @log.trainings.build(training_params)
         if @training.save
             redirect_to log_trainings_path
         else
