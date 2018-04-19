@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :logs do
     resources :trainings
   end
-  get '/logs/inactive' => 'logs#inactive'
+  get '/logs/inactive' => 'logs#inactive', as: 'inactive_logs'
   get '/public/404.html' => 'logs#index'
 end
