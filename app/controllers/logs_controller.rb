@@ -6,16 +6,19 @@ class LogsController < ApplicationController
         @logs = Log.where(active: true).order('id DESC')
         @active = @logs.count
         @total = Log.all.count
+        @total_trainings = all_trainings(@logs)
         respond_to do |format|
             format.html
             format.json { json_response(@logs)}
         end
+        
     end
     
     def inactive
         @logs = Log.where(active: false).order('id DESC')
         @inactive = @logs.count
         @total = Log.all.count
+        @total_trainings = all_trainings(@logs)
         respond_to do |format|
             format.html
             format.json { json_response(@logs)}
@@ -85,5 +88,9 @@ class LogsController < ApplicationController
             logs.each do |l|
                 l.trainings.count >> training_arr
             end
+        end
+        
+        def total_trainings
+            
         end
 end
