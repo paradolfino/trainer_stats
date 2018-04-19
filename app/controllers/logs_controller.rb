@@ -88,6 +88,7 @@ class LogsController < ApplicationController
             logs.each do |l|
                  training_arr.push(l.trainings.count)
             end
+            training_arr
         end
         
         def total_trainings
