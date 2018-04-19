@@ -43,7 +43,7 @@ class LogsController < ApplicationController
     def update
         @log = Log.find(params[:id])
         if @log.update(params_log)
-            redirect_to @log
+            redirect_to logs_path
         else
             render 'edit'
         end
