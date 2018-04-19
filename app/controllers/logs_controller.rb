@@ -12,7 +12,15 @@ class LogsController < ApplicationController
     def show
         @trainings = @log.trainings.order('id DESC')
         respond_to do |format|
-            format.json { json_response(@log.to_json(:include => [:trainings]))  or not_found }
+            format.json { 
+               
+                if @log 
+                    json_response(@log.to_json(:include => [:trainings]))  
+                else
+                    not_found
+                end
+                
+            }
         end
         
     end
