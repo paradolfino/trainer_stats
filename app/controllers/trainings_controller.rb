@@ -25,7 +25,7 @@ class TrainingsController < ApplicationController
     
     def update
         if @training.update(training_params)
-            redirect_to '/'
+            redirect_to log_trainings_path
         else
             render 'edit'
         end
