@@ -7,7 +7,7 @@ class TrainingsController < ApplicationController
     
     def new
         @log = Log.find(params[:id])
-        @training = Training.new
+        @training = @log.trainings.build
     end
     
     def create
