@@ -3,7 +3,7 @@ class LogsController < ApplicationController
     before_action :set_log, only: [:show, :edit, :destroy]
     
     def index
-        @logs = Log.all
+        @logs = Log.order('id DESC')
         respond_to do |format|
             format.json { json_response(@logs) }
         end
