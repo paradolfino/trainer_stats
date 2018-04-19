@@ -9,7 +9,7 @@ class LogsController < ApplicationController
         @total = Log.all.count
         respond_to do |format|
             format.html
-            format.json { json_response(@logs)}
+            format.json { json_response(@all_logs)}
         end
         
     end
@@ -21,7 +21,7 @@ class LogsController < ApplicationController
         
         respond_to do |format|
             format.html
-            format.json { json_response(@logs)}
+            format.json { json_response(@all_logs)}
         end
     end
     
