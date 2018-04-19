@@ -26,7 +26,11 @@ class LogsController < ApplicationController
     def edit; end
     
     def update
-        
+        if @log.update(params_log)
+            
+        else
+            
+        end
     end
     
     def destroy
