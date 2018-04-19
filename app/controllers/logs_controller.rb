@@ -79,4 +79,11 @@ class LogsController < ApplicationController
         def params_log
             params.require(:log).permit(:title, :active) 
         end
+        
+        def all_trainings(logs)
+            training_arr = []
+            logs.each do |l|
+                l.trainings.count >> training_arr
+            end
+        end
 end
