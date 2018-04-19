@@ -27,9 +27,9 @@ class LogsController < ApplicationController
     
     def update
         if @log.update(params_log)
-            
+            redirect_to @log
         else
-            
+            render 'edit'
         end
     end
     
