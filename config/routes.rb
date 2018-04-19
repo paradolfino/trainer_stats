@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/trainings/:id' => "trainings#update"
   resources :trainings
 =end
-
+  root 'logs#index'
   resources :logs do
     resources :trainings
     
