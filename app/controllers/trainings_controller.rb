@@ -6,7 +6,7 @@ class TrainingsController < ApplicationController
     end
     
     def new
-        @log = Log.find(params[:id])
+
         @trainings = Training.all.count
         @training = Training.new
     end
