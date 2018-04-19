@@ -1,6 +1,7 @@
 class LogsController < ApplicationController
     
     before_action :set_log, only: [:show, :edit, :destroy]
+    before_action :total_trainings
     
     def index
         @logs = Log.where(active: true).order('id DESC')
