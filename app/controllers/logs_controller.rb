@@ -92,6 +92,6 @@ class LogsController < ApplicationController
         
         def total_trainings
             @logs = Log.all
-            @total_trainings = all_trainings(@logs)
+            @total_trainings = all_trainings(@logs).reduce(&:+)
         end
 end
