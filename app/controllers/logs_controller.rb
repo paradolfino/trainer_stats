@@ -6,13 +6,9 @@ class LogsController < ApplicationController
         @logs = Log.all
     end
     
-    def show
-        
-    end
+    def show; end
     
-    def edit
-        
-    end
+    def edit; end
     
     def update
         
