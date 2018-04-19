@@ -1,10 +1,6 @@
 class TrainingsController < ApplicationController
     before_action :set_training, only: [:edit, :update, :destroy]
     
-    def index
-        @trainings = Training.order('id DESC')
-    end
-    
     def new
         @log = Log.find(params[:log_id])
         @training = @log.trainings.build
