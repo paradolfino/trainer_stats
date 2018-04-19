@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :logs do
     resources :trainings
   end
+  get '/public/404.html' => 'logs#index'
 end
