@@ -1,4 +1,6 @@
 class TrainingsController < ApplicationController
+    before_action :set_training, only: [:edit, :update, :destroy]
+    
     def index
         @trainings = Training.order('id DESC')
     end
@@ -17,9 +19,30 @@ class TrainingsController < ApplicationController
         end
     end
     
+    def edit
+        
+    end
+    
+    def update
+        if @training.update(training_params)
+            redirect_to '/'
+        else
+            render 'edit'
+        end
+    end
+    
+    def destroy
+       @training.destroy 
+       redirect_to '/trainings'
+    end
+    
     private
     
         def training_params
            params.require(:training).permit(:member, :company) 
+        end
+        
+        def set_training
+           @training = Training.find(params[:id]) 
         end
 end

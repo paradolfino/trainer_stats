@@ -1,0 +1,7 @@
+<%= form_for :training do |t| %>
+    <%= t.label :member %><br/>
+    <%= t.text_field :member, placeholder: "(Optional)" %><br/>
+    <%= t.label :company %><br/>
+    <%= t.text_field :company, placeholder: "(Optional)" %><br/>
+    <%= t.submit "Submit" %>
+<% end %>
