@@ -12,6 +12,10 @@ class LogsController < ApplicationController
         end
     end
     
+    def inactive
+        
+    end
+    
     def show
         @trainings = @log.trainings.order('id DESC')
         
