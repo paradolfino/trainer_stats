@@ -18,8 +18,6 @@ class LogsController < ApplicationController
             format.json { 
                     json_response(@log.to_json(:include => [:trainings]))  
             }
-            
-                
         end
         
         
