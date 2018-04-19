@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   post '/trainings/:id' => "trainings#update"
   resources :trainings
 =end
+
+  resources :logs do
+    resources :trainings
+    
+  end
 end
