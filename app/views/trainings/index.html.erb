@@ -15,7 +15,7 @@
                 <td><%= t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M") %></td>
                 <td><%= t.member %></td>
                 <td><%= t.company %></td>    
-                <td><%= link_to "Edit", edit_training_path(t) %> | <%= link_to "Delete", training_path(t), method: :delete %></td>
+                <td><%= link_to "Edit", edit_log_training_path(t) %> | <%= link_to "Delete", log_training_path(t), method: :delete %></td>
             </tr>
         <% end %>
     </tbody>
