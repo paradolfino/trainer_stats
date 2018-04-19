@@ -6,7 +6,9 @@ class LogsController < ApplicationController
         @logs = Log.all
     end
     
-    def show; end
+    def show
+        @trainings = @log.trainings    
+    end
     
     def edit; end
     
