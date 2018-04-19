@@ -22,7 +22,7 @@ class TrainingsController < ApplicationController
     
     def update
         @log = Log.find(params[:log_id])
-        @training = @log.trainings.find(params[:log_id]) 
+        @training = @log.trainings.find(params[:id]) 
         if @training.update(training_params)
             redirect_to log_trainings_path
         else
