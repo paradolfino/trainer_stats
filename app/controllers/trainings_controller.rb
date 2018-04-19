@@ -6,7 +6,7 @@ class TrainingsController < ApplicationController
     end
     
     def new
-        @log = Log.find(params[:id])
+        @log = Log.find(params[:log_id])
         @training = @log.trainings.build
     end
     
