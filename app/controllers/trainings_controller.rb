@@ -33,7 +33,7 @@ class TrainingsController < ApplicationController
     
     def destroy
        @training.destroy 
-       redirect_to '/trainings'
+       redirect_to log_trainings_path
     end
     
     private
