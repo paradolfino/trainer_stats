@@ -3,7 +3,7 @@ class LogsController < ApplicationController
     before_action :set_log, only: [:show, :edit, :destroy]
     
     def index
-        @logs = Log.order('id DESC')
+        @logs = Log.where(active: true).order('id DESC')
         respond_to do |format|
             format.html
             format.json { json_response(@logs) or not_found}
