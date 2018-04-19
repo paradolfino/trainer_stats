@@ -23,6 +23,6 @@ class LogsController < ApplicationController
     private
         
         def params_log
-            
+            params.require(:log).permit(:title, :active) 
         end
 end
