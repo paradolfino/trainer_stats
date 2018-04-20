@@ -22,3 +22,5 @@
 ##### 20/04/2018: 17:39 - 17:58:pool[work on styling and finish connecting new support/request pages]
 
 ##### 20/04/2018: 19:26 - 19:46:pool[fix routing issue with support/feature links, condense pages into one]
+
+##### 20/04/2018: 19:46 - 19:50:pool[general css improvements]
