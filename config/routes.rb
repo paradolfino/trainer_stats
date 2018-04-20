@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/support' => 'tickets#new'
   post '/request' => 'tickets#create'
   post '/request' => 'tickets#create'
+  get '/thanks' => 'tickets#thanks'
+  get '/about' => 'tickets#about'
   
   
 end
