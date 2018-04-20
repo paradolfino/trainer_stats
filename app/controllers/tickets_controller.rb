@@ -3,18 +3,6 @@ class TicketsController < ApplicationController
         @ticket = Ticket.new
     end
     
-    def featrequest
-        @ticket = Ticket.new
-        @code = "feature"
-        @prop = "Send a request for a new feature:"
-    end
-    
-    def support
-        @ticket = Ticket.new
-        @code = "support"
-        @prop = "Report an issue:"
-    end
-    
     def create
         @ticket = Ticket.new(params_tickets)
         if @ticket.save
