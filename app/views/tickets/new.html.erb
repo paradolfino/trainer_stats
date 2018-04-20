@@ -2,6 +2,7 @@
 <h5 class="text-center">Found a bug or have an idea to improve the app? Send it in here.</h5>
 
 <%= form_for :ticket do |f| %>
+    <%= f.label "Type of Request:" %>
     <p><%= select_tag(:code, options_for_select(["Feature Request", "Support Request"])) %></p>
     <p><%= f.text_area :content %></p>
     <%= f.submit "Send" %>
