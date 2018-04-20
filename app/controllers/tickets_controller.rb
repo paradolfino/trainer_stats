@@ -3,6 +3,14 @@ class TicketsController < ApplicationController
         @ticket = Ticket.new
     end
     
+    def request
+        @ticket = Ticket.new
+    end
+    
+    def support
+        @ticket = Ticket.new
+    end
+    
     def create
         @ticket = Ticket.new(params_tickets)
         if @ticket.save
