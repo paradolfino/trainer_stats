@@ -17,4 +17,7 @@ Rails.application.routes.draw do
   
   get '/request' => 'tickets#new'
   get '/support' => 'tickets#new'
+  post '/request' => 'tickets#create'
+  
+  
 end
