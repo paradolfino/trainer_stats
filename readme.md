@@ -18,3 +18,5 @@
 ##### 20/04/2018: 15:30 - 15:39:pool[add font-awesome]
 
 ##### 20/04/2018: 15:39 - 17:36:pool[add support/request model and controller]
+
+##### 20/04/2018: 17:39 - 17:58:pool[work on styling and finish connecting new support/request pages]
