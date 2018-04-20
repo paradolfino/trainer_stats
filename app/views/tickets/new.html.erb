@@ -1,5 +1,5 @@
 <%= form_for :ticket do |f| %>
-    <%= select_tag(:code, options_for_select(["Feature Request"],["Support Request"])) %><br/>
+    <%= select_tag(:code, options_for_select(["Feature Request", "Support Request"])) %><br/>
     <%= f.text_area :content %><br/>
     <%= f.submit "Send" %>
 <% end %>
