@@ -6,4 +6,12 @@ class TicketsController < ApplicationController
     def create
         
     end
+    
+    def thanks
+        
+    end
+    
+    def about
+        
+    end
 end
