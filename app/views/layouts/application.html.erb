@@ -4,12 +4,28 @@
     <title>TrainerStats</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   </head>
 
   <body>
+    <div class="bar">
+      <ul id="head">
+        <li>by Viktharien Volander</li>
+      </ul>
+    </div>
     <%= yield %>
+    <div class="bar">
+      <ul id="foot">
+        <li>
+          Support
+        </li>
+        <li>
+          Feature Request
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

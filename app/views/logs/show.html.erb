@@ -1,7 +1,7 @@
-<h3><%= @log.title %> Log <small>[with <%= @log.trainings.count %> trainings logged.]</small></h3>
+<h3 class="text-center"><%= @log.title %> Log <small>[with <%= @log.trainings.count %> trainings logged.]</small></h3>
 <h4>Active: <%= @log.active %></h4>
-<hr/>
-<table>
+
+<table class="table text-center">
     <thead>
         <tr>
             <th>Time Logged</th>
@@ -22,4 +22,6 @@
     </tbody>
 </table>
 
-<%= link_to "Log a New Training", new_log_training_path(@log) %> | <%= link_to "Go back to all Logs", logs_path %>
+<div id="options">
+    <%= link_to "Log a New Training", new_log_training_path(@log) %> | <%= link_to "Go back to all Logs", logs_path %>
+</div>
