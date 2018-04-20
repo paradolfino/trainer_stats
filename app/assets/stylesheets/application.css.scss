@@ -21,24 +21,7 @@
     font-family: "Impact";
 }
 
-.options {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    
-    a {
-        margin: 20px;
-        padding: 10px;
-        color: white;
-        background-color: #296893;
-        
-        &:hover {
-            background-color: #205375;
-            text-decoration: none;
-        }
-    }
-}
+
 
 #content {
     height: 800px;
@@ -66,6 +49,25 @@
         li {
             display: inline-block;
             padding: 10px;
+        }
+    }
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    
+    a {
+        margin: 20px;
+        padding: 10px;
+        color: white;
+        background-color: #296893;
+        
+        &:hover {
+            background-color: #205375;
+            text-decoration: none;
         }
     }
 }
