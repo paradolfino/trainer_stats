@@ -1,6 +1,1 @@
 
-[s]
-### 20/04/2018[15:30 - 17:36]:
-* add font-awesome
-* add support/request model and controller
-
