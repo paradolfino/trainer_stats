@@ -12,7 +12,7 @@ class TicketsController < ApplicationController
     def support
         @ticket = Ticket.new
         @code = "support"
-        @prop = "Send a support request:"
+        @prop = "Report an issue:"
     end
     
     def create
