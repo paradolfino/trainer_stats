@@ -1,1 +1,5 @@
 
+[minor css changes so that body is default to 800px]
+### 20/04/2018[13:57 - 14:02]:
+* minor styling changes
+
