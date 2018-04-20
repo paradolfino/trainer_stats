@@ -14,4 +14,10 @@ class TicketsController < ApplicationController
     def about
         
     end
+    
+    private
+    
+        def params_tickets
+            params.require(:ticket).permit(:code, :content)    
+        end
 end
