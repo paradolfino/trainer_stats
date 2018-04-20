@@ -4,6 +4,7 @@
 <%= form_for :ticket do |f| %>
     <%= f.label "Type of Request:" %>
     <p><%= select_tag(:code, options_for_select(["Feature Request", "Support Request"])) %></p>
+    <%= f.label "Explanation of Request:" %>
     <p><%= f.text_area :content %></p>
     <%= f.submit "Send" %>
 <% end %>
