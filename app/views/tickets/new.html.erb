@@ -1,6 +1,6 @@
 <%= form_for :ticket do |f| %>
     <%= f.options_for_select([ "VISA", "MasterCard" ], "MasterCard") %>
-    <%= f.label nil, value: @prop %><br/>
+    
     <%= f.text_area :content %><br/>
     <%= f.submit "Send" %>
 <% end %>
