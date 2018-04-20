@@ -2,6 +2,7 @@
     <%= f.hidden_field :code, value: @code %>
     <%= f.label nil, value: @prop %><br/>
     <%= f.text_area :content %>
+    <%= f.submit "Send" %>
 <% end %>
 <div class="options">
     <%= link_to "Go Back", root_path %>
