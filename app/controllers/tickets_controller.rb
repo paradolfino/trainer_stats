@@ -5,6 +5,8 @@ class TicketsController < ApplicationController
     
     def featrequest
         @ticket = Ticket.new
+        @code = "feature"
+        @prop = "What can I improve?"
     end
     
     def support
