@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/public/404.html' => 'logs#index'
   
   get '/request' => 'tickets#new'
-  get '/support' => 'tickets#new'
+  get '/support' => 'tickets#support'
   post '/request' => 'tickets#create'
   post '/request' => 'tickets#create'
   get '/thanks' => 'tickets#thanks'
