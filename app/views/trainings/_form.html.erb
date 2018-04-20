@@ -1,7 +1,7 @@
 <%= form_for ([@log, @training]) do |t| %>
-    <%= t.label :member %><br/>
-    <%= t.text_field :member, placeholder: "(Optional)" %><br/>
-    <%= t.label :company %><br/>
-    <%= t.text_field :company, placeholder: "(Optional)" %><br/>
-    <%= t.submit "Submit" %>
+    <%= t.label :member %>
+    <p><%= t.text_field :member, placeholder: "(Optional)" %></p>
+    <%= t.label :company %>
+    <p><%= t.text_field :company, placeholder: "(Optional)" %></p>
+    <p><%= t.submit "Submit" %></p>
 <% end %>
