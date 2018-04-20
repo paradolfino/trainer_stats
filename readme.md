@@ -14,3 +14,5 @@
 ##### 19/04/2018: 19:41 - 21:34:pool[start work on styling views]
 
 ##### 20/04/2018: 13:57 - 14:02:pool[minor styling changes]
+
+##### 20/04/2018: 15:30 - 15:39:pool[add font-awesome]
