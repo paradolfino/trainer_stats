@@ -1,6 +1,6 @@
 <%= form_for :ticket do |f| %>
     <%= f.hidden_field :code, value: @code %>
-    <%= f.label nil, value: @prop %>
+    <%= f.label nil, value: @prop %><br/>
     <%= f.text_area :content %>
 <% end %>
 <div class="options">
