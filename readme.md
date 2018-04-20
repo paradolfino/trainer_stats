@@ -20,3 +20,5 @@
 ##### 20/04/2018: 15:39 - 17:36:pool[add support/request model and controller]
 
 ##### 20/04/2018: 17:39 - 17:58:pool[work on styling and finish connecting new support/request pages]
+
+##### 20/04/2018: 19:26 - 19:46:pool[fix routing issue with support/feature links, condense pages into one]
