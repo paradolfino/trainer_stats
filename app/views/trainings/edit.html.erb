@@ -1,3 +1,3 @@
 Edit Training with ID #<%= @training.id %>: <br/>
 <%= render 'form' %>
-<%= link_to "Back to the Trainings Log", log_trainings_path %>
+<%= link_to "Back to the Trainings Log", log_path(@training.log) %>

@@ -1,7 +1,1 @@
 
-[fix to controllers - now all actions are correctly mapped, add private methods for totalling trainings and add action for inactive logs plus routes and views]
-### 19/04/2018[19:08 - 21:34]:
-* set up json response and counts
-* set up 404
-* start work on styling views
-
