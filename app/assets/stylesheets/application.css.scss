@@ -27,17 +27,7 @@
     align-items: center;
     margin-top: 10px;
     
-    a {
-        margin: 20px;
-        padding: 10px;
-        color: white;
-        background-color: #296893;
-        
-        &:hover {
-            background-color: #205375;
-            text-decoration: none;
-        }
-    }
+    
 }
 
 #content {
@@ -68,6 +58,18 @@
             padding: 10px;
         }
     }
+}
+
+.clicky {
+        margin: 20px;
+        padding: 10px;
+        color: white;
+        background-color: #296893;
+        
+        &:hover {
+            background-color: #205375;
+            text-decoration: none;
+        }
 }
 
 body * {
