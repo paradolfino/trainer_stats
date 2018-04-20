@@ -1,10 +1,15 @@
 class TicketsController < ApplicationController
     def new
-        
+        @ticket = Ticket.new
     end
     
     def create
-        
+        @ticket = Ticket.new(params_tickets)
+        if @ticket.save
+            
+        else
+            
+        end
     end
     
     def thanks
