@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
         @ticket = Ticket.new
     end
     
-    def request
+    def feat_request
         @ticket = Ticket.new
     end
     
