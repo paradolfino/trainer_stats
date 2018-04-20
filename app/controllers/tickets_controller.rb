@@ -6,9 +6,9 @@ class TicketsController < ApplicationController
     def create
         @ticket = Ticket.new(params_tickets)
         if @ticket.save
-            
+           redirect_to thanks_path 
         else
-            
+            redirect_to thanks_path
         end
     end
     
