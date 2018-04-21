@@ -28,3 +28,5 @@
 ##### 21/04/2018: 20:46 - 20:54:pool[expanding training log options]
 
 ##### 21/04/2018: 20:54 - 20:57:pool[expand trainings table]
+
+##### 21/04/2018: 20:57 - 21:11:pool[fix trainings controller]
