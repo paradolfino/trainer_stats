@@ -36,3 +36,5 @@
 ##### 21/04/2018: 21:16 - 21:21:pool[add destroy action for logs]
 
 ##### 21/04/2018: 21:21 - 21:29:pool[switch header and footer content]
+
+##### 21/04/2018: 21:36 - 21:43:pool[minor css fix to create new log]
