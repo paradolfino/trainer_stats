@@ -24,3 +24,5 @@
 ##### 20/04/2018: 19:26 - 19:46:pool[fix routing issue with support/feature links, condense pages into one]
 
 ##### 20/04/2018: 19:46 - 19:50:pool[general css improvements]
+
+##### 21/04/2018: 20:46 - 20:54:pool[expanding training log options]
