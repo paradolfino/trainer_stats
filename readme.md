@@ -30,3 +30,5 @@
 ##### 21/04/2018: 20:54 - 20:57:pool[expand trainings table]
 
 ##### 21/04/2018: 20:57 - 21:11:pool[fix trainings controller]
+
+##### 21/04/2018: 21:11 - 21:15:pool[fix logs table]
