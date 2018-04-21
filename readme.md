@@ -26,3 +26,5 @@
 ##### 20/04/2018: 19:46 - 19:50:pool[general css improvements]
 
 ##### 21/04/2018: 20:46 - 20:54:pool[expanding training log options]
+
+##### 21/04/2018: 20:54 - 20:57:pool[expand trainings table]
