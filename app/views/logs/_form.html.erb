@@ -1,6 +1,6 @@
 <%= form_for @log do |f| %>
     <%= f.label "Title:" %><br/>
-    <%= f.text_field :title, value: "#{Time.now.in_time_zone("Central Time (US & Canada)").strftime("%b")}" %><br/>
+    <%= f.text_field :title, value: "#{Time.now.in_time_zone("Central Time (US & Canada)").strftime("%B")}" %><br/>
     <%= f.label :active %><br/>
     <%= f.label :active, "Yes", value: "true" %>
     <%= f.radio_button :active, true, :checked => true %>
