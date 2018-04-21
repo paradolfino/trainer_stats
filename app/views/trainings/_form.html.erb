@@ -7,5 +7,7 @@
     <p><%= select_tag(:trainer, options_for_select(["", "Chris V.", "Mac S.", "Audra S.", "Aaron V."])) %></p>
     <%= t.label "Type of Training" %>
     <p><%= select_tag(:stage, options_for_select(["1st Launch", "2nd Launch", "Follow Up", "Extra Follow Up"])) %></p>
+    <%= t.label "Status" %>
+    <p><%= select_tag(:status, options_for_select(["Completed", "Incomplete", "No Show", "Unsure About Price"])) %></p>
     <p><%= t.submit "Submit" %></p>
 <% end %>
