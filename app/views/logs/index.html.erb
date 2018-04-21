@@ -16,6 +16,7 @@
                 <td><%= link_to t.title, log_path(t) %></td>
                 <td><%= t.trainings.count %></td>
                 <td> <%= link_to fa_icon("edit", text: "Edit"), edit_log_path(t) %></td>
+                <td> <%= link_to fa_icon("trash", text: "Delete"), edit_log_path(t) %></td>
             </tr>
         <% end %>
     </tbody>
