@@ -1,6 +1,10 @@
 
-[condense support and feature request, fix up css]
-### 20/04/2018[19:26 - 19:50]:
-* fix routing issue with support/feature links, condense pages into one
-* general css improvements
+[added additional details for logging trainings]
+### 21/04/2018[20:46 - 21:29]:
+* expanding training log options
+* expand trainings table
+* fix trainings controller
+* fix logs table
+* add destroy action for logs
+* switch header and footer content
 

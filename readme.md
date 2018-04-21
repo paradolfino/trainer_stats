@@ -24,3 +24,15 @@
 ##### 20/04/2018: 19:26 - 19:46:pool[fix routing issue with support/feature links, condense pages into one]
 
 ##### 20/04/2018: 19:46 - 19:50:pool[general css improvements]
+
+##### 21/04/2018: 20:46 - 20:54:pool[expanding training log options]
+
+##### 21/04/2018: 20:54 - 20:57:pool[expand trainings table]
+
+##### 21/04/2018: 20:57 - 21:11:pool[fix trainings controller]
+
+##### 21/04/2018: 21:11 - 21:15:pool[fix logs table]
+
+##### 21/04/2018: 21:16 - 21:21:pool[add destroy action for logs]
+
+##### 21/04/2018: 21:21 - 21:29:pool[switch header and footer content]

@@ -7,6 +7,9 @@
             <th>Time Logged</th>
             <th>Member Name</th>
             <th>Company Name</th>
+            <th>Trainer</th>
+            <th>Type/Stage</th>
+            <th>Status</th>
             <th></th>
         </tr>
     </thead>
@@ -15,7 +18,10 @@
             <tr>
                 <td><%= t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M") %></td>
                 <td><%= t.member %></td>
-                <td><%= t.company %></td>    
+                <td><%= t.company %></td>
+                <td><%= t.trainer %></td> 
+                <td><%= t.stage %></td> 
+                <td><%= t.status %></td> 
                 <td><%= link_to "Edit", edit_log_training_path(t) %> | <%= link_to "Delete", log_training_path(t), method: :delete %></td>
             </tr>
         <% end %>

@@ -1,7 +1,13 @@
 <%= form_for ([@log, @training]) do |t| %>
     <%= t.label :member %>
-    <p><%= t.text_field :member, placeholder: "(Optional)" %></p>
+    <p><%= t.text_field :member %></p>
     <%= t.label :company %>
-    <p><%= t.text_field :company, placeholder: "(Optional)" %></p>
+    <p><%= t.text_field :company %></p>
+    <%= t.label "Trainer" %>
+    <p><%= t.select(:trainer, options_for_select(["", "Chris V.", "Mac S.", "Audra S.", "Aaron V."])) %></p>
+    <%= t.label "Type of Training" %>
+    <p><%= t.select(:stage, options_for_select(["1st Launch", "2nd Launch", "Follow Up", "Extra Follow Up"])) %></p>
+    <%= t.label "Status" %>
+    <p><%= t.select(:status, options_for_select(["Complete", "Incomplete", "No Show", "Demonstration"])) %></p>
     <p><%= t.submit "Submit" %></p>
 <% end %>

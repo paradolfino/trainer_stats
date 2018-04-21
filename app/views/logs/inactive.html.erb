@@ -5,8 +5,8 @@
         <tr>
             <th>Date Created</th>
             <th>Log Title</th>
-            <th>Options</th>
             <th># of Trainings</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -14,8 +14,8 @@
             <tr>
                 <td><%= t.created_at.strftime("%m/%d/%Y") %></td>
                 <td><%= link_to t.title, log_path(t) %></td>
-                <td><%= link_to fa_icon("edit", text: "Edit"), edit_log_path(t) %></td>
                 <td><%= t.trainings.count %></td>
+                <td><%= link_to fa_icon("edit", text: "Edit"), edit_log_path(t) %> | <%= link_to fa_icon("trash", text: "Delete"), log_path(t), method: :delete %></td>
             </tr>
         <% end %>
     </tbody>
