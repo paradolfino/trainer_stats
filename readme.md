@@ -34,3 +34,5 @@
 ##### 21/04/2018: 21:11 - 21:15:pool[fix logs table]
 
 ##### 21/04/2018: 21:16 - 21:21:pool[add destroy action for logs]
+
+##### 21/04/2018: 21:21 - 21:29:pool[switch header and footer content]
