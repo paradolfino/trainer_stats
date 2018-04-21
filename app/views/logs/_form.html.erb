@@ -1,6 +1,6 @@
 <%= form_for @log do |f| %>
     <%= f.label "Title:" %><br/>
-    <%= f.text_field :title, placeholder: "#{Time.now}" %><br/>
+    <%= f.text_field :title, value: "#{Time.now}" %><br/>
     <%= f.label :active %><br/>
     <%= f.label :active, "Yes", value: "true" %>
     <%= f.radio_button :active, true, :checked => true %>
