@@ -1,8 +1,8 @@
 <%= form_for ([@log, @training]) do |t| %>
     <%= t.label :member %>
-    <p><%= t.text_field :member, placeholder: "(Optional)" %></p>
+    <p><%= t.text_field :member</p>
     <%= t.label :company %>
-    <p><%= t.text_field :company, placeholder: "(Optional)" %></p>
+    <p><%= t.text_field :company</p>
     <%= t.label "Trainer" %>
     <p><%= select_tag(:trainer, options_for_select(["", "Chris V.", "Mac S.", "Audra S.", "Aaron V."])) %></p>
     <%= t.label "Type of Training" %>
