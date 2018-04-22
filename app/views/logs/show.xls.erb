@@ -17,9 +17,9 @@
     <% @trainings.each do |t| %>
       <Row>
         <Cell><Data ss:Type="String"><%= t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M") %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= product.name %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= product.released_on %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= product.price %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t.member %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t.company %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t.trainer %></Data></Cell>
       </Row>
     <% end %>
     </Table>
