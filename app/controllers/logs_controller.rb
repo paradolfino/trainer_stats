@@ -27,7 +27,7 @@ class LogsController < ApplicationController
     
     def show
         @trainings = @log.trainings.order('id DESC')
-        
+        @count = @trainings.count
         respond_to do |format|
             format.html
             format.json { 
