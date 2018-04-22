@@ -7,14 +7,14 @@
   <Worksheet ss:Name="<%= @log.title %>">
     <Table>
       <Row>
-        <Cell><Data ss:Type="String">ID</Data></Cell>
-        <Cell><Data ss:Type="String">Name</Data></Cell>
-        <Cell><Data ss:Type="String">Release Date</Data></Cell>
+        <Cell><Data ss:Type="String">Time Logged</Data></Cell>
+        <Cell><Data ss:Type="String">Member Name</Data></Cell>
+        <Cell><Data ss:Type="String">Company</Data></Cell>
         <Cell><Data ss:Type="String">Price</Data></Cell>
       </Row>
     <% @products.each do |product| %>
       <Row>
-        <Cell><Data ss:Type="Number"><%= product.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M") %></Data></Cell>
         <Cell><Data ss:Type="String"><%= product.name %></Data></Cell>
         <Cell><Data ss:Type="String"><%= product.released_on %></Data></Cell>
         <Cell><Data ss:Type="Number"><%= product.price %></Data></Cell>
