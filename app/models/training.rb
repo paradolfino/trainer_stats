@@ -8,7 +8,7 @@ class Training < ApplicationRecord
             items += 1
           csv << training.attributes.values_at(*column_names)
         end
-        csv << ["Trainings", items]
+        csv << ["Total Trainings", items]
       end
     end
 end
