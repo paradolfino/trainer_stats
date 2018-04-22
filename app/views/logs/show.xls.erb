@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="<%= @log.title %>">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Time Logged</Data></Cell>
+        <Cell><Data ss:Type="String">Member Name</Data></Cell>
+        <Cell><Data ss:Type="String">Company</Data></Cell>
+        <Cell><Data ss:Type="String">Trainer</Data></Cell>
+        <Cell><Data ss:Type="String">Stage</Data></Cell>
+        <Cell><Data ss:Type="String">Status</Data></Cell>
+        <Cell><Data ss:Type="String">Total: <%= @count %></Data></Cell>
+      </Row>
+    <% @trainings.each do |t| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M") %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t.member %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t.company %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t.trainer %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t.stage %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= t.status %></Data></Cell>
+      </Row>
+    <% end %>
+        
+    </Table>
+  </Worksheet>
+</Workbook>

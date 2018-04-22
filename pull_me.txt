@@ -1,6 +1,5 @@
 
-[s]
-### 21/04/2018[21:36 - 21:45]:
-* minor css fix to create new log
-* minor fix to css/html of about page
+[add csv/xls export functionality for log trainings]
+### 22/04/2018[22:42 - 23:31]:
+* implement csv export with logs show action
 

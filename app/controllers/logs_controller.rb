@@ -27,12 +27,14 @@ class LogsController < ApplicationController
     
     def show
         @trainings = @log.trainings.order('id DESC')
-        
+        @count = @trainings.count
         respond_to do |format|
             format.html
             format.json { 
                     json_response(@log.to_json(:include => [:trainings]))  
             }
+            format.csv { send_data @trainings.to_csv, filename: "#{@log.title}.csv" }
+            format.xls { send_data @trainings.to_csv(col_sep: "\t"), filename: "#{@log.title}.xls" }
         end
         
         
