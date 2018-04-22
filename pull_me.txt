@@ -1,1 +1,5 @@
 
+[add csv/xls export functionality for log trainings]
+### 22/04/2018[22:42 - 23:31]:
+* implement csv export with logs show action
+
