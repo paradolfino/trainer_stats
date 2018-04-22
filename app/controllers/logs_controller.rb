@@ -33,6 +33,8 @@ class LogsController < ApplicationController
             format.json { 
                     json_response(@log.to_json(:include => [:trainings]))  
             }
+            format.csv { send_data @products.to_csv }
+            format.xls # { send_data @products.to_csv(col_sep: "\t") }
         end
         
         
