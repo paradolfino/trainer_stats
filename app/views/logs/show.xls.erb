@@ -24,6 +24,9 @@
         <Cell><Data ss:Type="String"><%= t.status %></Data></Cell>
       </Row>
     <% end %>
+        <Row>
+            <Cell><Data ss:Type="Number"><%= @trainings.count %></Data></Cell>
+        </Row>
     </Table>
   </Worksheet>
 </Workbook>
