@@ -9,5 +9,7 @@
     <p><%= t.select(:stage, options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-one"])) %></p>
     <%= t.label "Status" %>
     <p><%= t.select(:status, options_for_select(["Complete", "Incomplete", "No Show", "Demonstration"])) %></p>
+    <%= t.label "Notes" %>
+    <p><%= f.text_area :notes %></p>
     <p><%= t.submit "Submit" %></p>
 <% end %>
