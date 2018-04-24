@@ -10,6 +10,6 @@
     <%= t.label "Status" %>
     <p><%= t.select(:status, options_for_select(["Complete", "Incomplete", "No Show", "Demonstration"])) %></p>
     <%= t.label "Notes" %>
-    <p><%= f.text_area :notes %></p>
+    <p><%= t.text_area :notes %></p>
     <p><%= t.submit "Submit" %></p>
 <% end %>
