@@ -29,7 +29,7 @@
                 <% else %>
                     <td>Yes</td>
                 <% end %>
-                <td><%= link_to fa_icon("edit", text: "View/Edit"), log_training_path(t) %> | <%= link_to fa_icon("trash", text: "Delete"), log_training_path(t), method: :delete %></td>
+                <td><%= link_to fa_icon("search", text: "View"), log_training_path(t) %> | <%= link_to fa_icon("trash", text: "Delete"), log_training_path(t), method: :delete %></td>
             </tr>
         <% end %>
     </tbody>
