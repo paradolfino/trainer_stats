@@ -25,7 +25,7 @@
                 <td><%= t.stage %></td> 
                 <td><%= t.status %></td> 
                 <td><%= "Yes" if t.notes %></td>
-                <td><%= link_to fa_icon("edit", text: "View/Edit"), edit_log_training_path(t) %> | <%= link_to fa_icon("trash", text: "Delete"), log_training_path(t), method: :delete %></td>
+                <td><%= link_to fa_icon("edit", text: "View/Edit"), log_training_path(t) %> | <%= link_to fa_icon("trash", text: "Delete"), log_training_path(t), method: :delete %></td>
             </tr>
         <% end %>
     </tbody>
