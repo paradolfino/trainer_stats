@@ -42,3 +42,5 @@
 ##### 21/04/2018: 21:43 - 21:45:pool[minor fix to css/html of about page]
 
 ##### 22/04/2018: 22:42 - 23:31:pool[implement csv export with logs show action]
+
+##### 26/04/2018: 21:30 - 21:53:pool[changing view/edit to View on trainings screen and adding show view and action]
