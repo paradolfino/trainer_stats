@@ -6,6 +6,11 @@ class TrainingsController < ApplicationController
         @trainigns = @log.trainings
     end
     
+    def show
+        @log = Log.find(params[:id])
+        @training = @log.trainings.find(params[:log_id])
+    end
+    
     def new
         @log = Log.find(params[:log_id])
         @training = @log.trainings.build
