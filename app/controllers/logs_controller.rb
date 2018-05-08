@@ -2,6 +2,7 @@ class LogsController < ApplicationController
     
     before_action :set_log, only: [:show, :edit, :destroy]
     before_action :total_trainings, only: [:index, :inactive]
+    before_action :authenticate_user!, except: [:index, :show]
     
     def index
         @logs = Log.where(active: true).order('id DESC')
