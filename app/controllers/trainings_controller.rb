@@ -21,6 +21,7 @@ class TrainingsController < ApplicationController
         @log = Log.find(params[:log_id])
         @training = @log.trainings.build(training_params)
         if @training.save
+            create_event("created", "#{@training.stage} training for #{@training.member} from #{@training.company}")
             redirect_to @log
         else
             render 'new'
@@ -36,6 +37,7 @@ class TrainingsController < ApplicationController
         @log = Log.find(params[:log_id])
         @training = @log.trainings.find(params[:id]) 
         if @training.update(training_params)
+            create_event("updated", "#{@training.status} training for #{@training.member} from #{@training.company}")
             redirect_to @log
         else
             render 'edit'
@@ -44,7 +46,8 @@ class TrainingsController < ApplicationController
     
     def destroy
         @log = Log.find(params[:id])
-        @training = @log.trainings.find(params[:log_id]) 
+        @training = @log.trainings.find(params[:log_id])
+        create_event("destroyed", "#{@training.status} training for #{@training.member} from #{@training.company}")
         @training.destroy 
         redirect_to @log
     end
