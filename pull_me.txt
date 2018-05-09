@@ -1,1 +1,10 @@
 
+[integrate all changes from d2-trainer-stats, add events and audit trail]
+### 09/05/2018[15:15 - 15:35]:
+* implement audit trail with event model and events controller
+* implement D2 changes to controllers including methods for authorization in application controller
+* implement D2 changes to models
+* implement D2 changes to views
+* add events routes
+* testing and necessary hotfixes
+
