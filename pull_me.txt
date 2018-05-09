@@ -1,6 +1,1 @@
 
-[add show view/action for trainings, fix css on log trainings index for Has Notes and for font_awesome icons]
-### 26/04/2018[21:30 - 21:55]:
-* changing view/edit to View on trainings screen and adding show view and action
-* fix css for show index
-
