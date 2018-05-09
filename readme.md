@@ -46,3 +46,5 @@
 ##### 26/04/2018: 21:30 - 21:53:pool[changing view/edit to View on trainings screen and adding show view and action]
 
 ##### 26/04/2018: 21:53 - 21:55:pool[fix css for show index]
+
+##### 09/05/2018: 15:15 - 15:18:pool[implement audit trail with event model and events controller]
