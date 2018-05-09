@@ -54,3 +54,5 @@
 ##### 09/05/2018: 15:24 - 15:26:pool[implement D2 changes to models]
 
 ##### 09/05/2018: 15:26 - 15:31:pool[implement D2 changes to views]
+
+##### 09/05/2018: 15:31 - 15:32:pool[add events routes]
