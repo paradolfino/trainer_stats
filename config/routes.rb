@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'events/audit'
+  devise_for :users, :path_prefix => 'portal', :skip => 'registrations'
 =begin 
   root 'trainings#new'
   post '/' => 'trainings#create'
@@ -7,6 +9,17 @@ Rails.application.routes.draw do
   post '/trainings/:id' => "trainings#update"
   resources :trainings
 =end
+  
+  devise_scope :user do
+    get 'login', to: 'devise/sessions#new'
+    get 'logout', to: 'devise/sessions#destroy'
+  end
+  scope '/admin' do
+    resources :users
+    get 'audit' => 'events#audit'
+    resources :events, only: :create
+  end
+  
   get '/logs/inactive' => 'logs#inactive', as: 'inactive_logs'
   root 'logs#index'
   resources :logs do

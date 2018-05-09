@@ -1,0 +1,25 @@
+<h3 class="text-center">Audit Trail</h3>
+<p class="text-center"><%= link_to "View Users", users_path %></p>
+
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>Event Date/Time Logged</th>
+            <th>User</th>
+            <th>Event</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @events.each do |t| %>
+            <tr>
+                <td><%= t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M") %></td>
+                <td><%= t.user.email %></td>
+                <td><%= "#{t.action} #{t.content}" %></td> 
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<div class="options">
+    <%= link_to "Go Back", users_path %>
+</div>

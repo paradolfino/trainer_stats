@@ -1,6 +1,10 @@
 
-[add show view/action for trainings, fix css on log trainings index for Has Notes and for font_awesome icons]
-### 26/04/2018[21:30 - 21:55]:
-* changing view/edit to View on trainings screen and adding show view and action
-* fix css for show index
+[integrate all changes from d2-trainer-stats, add events and audit trail]
+### 09/05/2018[15:15 - 15:35]:
+* implement audit trail with event model and events controller
+* implement D2 changes to controllers including methods for authorization in application controller
+* implement D2 changes to models
+* implement D2 changes to views
+* add events routes
+* testing and necessary hotfixes
 
