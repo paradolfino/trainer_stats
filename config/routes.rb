@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   end
   scope '/admin' do
     resources :users
+    get 'audit' => 'events#audit'
+    resources :events, only: :create
   end
   
   get '/logs/inactive' => 'logs#inactive', as: 'inactive_logs'
