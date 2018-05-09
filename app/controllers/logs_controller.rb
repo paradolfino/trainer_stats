@@ -48,7 +48,8 @@ class LogsController < ApplicationController
     def create
         @log = Log.new(params_log)
         if @log.save
-           redirect_to @log
+            create_event("created", "log with ID: #{@log.id}, Title: #{@log.title}")
+            redirect_to @log
         else
             render 'new'
         end
@@ -57,8 +58,11 @@ class LogsController < ApplicationController
     def edit; end
     
     def update
+        
         @log = Log.find(params[:id])
+        @old_title = @log.title
         if @log.update(params_log)
+            create_event("updated", "log with ID: #{@log.id}, Title: #{@old_title} to (Title: #{@log.title}, Active: #{@log.active})")
             redirect_to logs_path
         else
             render 'edit'
@@ -66,6 +70,7 @@ class LogsController < ApplicationController
     end
     
     def destroy
+        create_event("destroyed", "log with ID: #{@log.id}, Title: #{@log.title}")
         @log.destroy
         redirect_to logs_path
         
@@ -98,4 +103,6 @@ class LogsController < ApplicationController
             @all_logs = Log.all
             @total_trainings = all_trainings(@all_logs)
         end
+        
+        
 end
