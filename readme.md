@@ -50,3 +50,5 @@
 ##### 09/05/2018: 15:15 - 15:18:pool[implement audit trail with event model and events controller]
 
 ##### 09/05/2018: 15:18 - 15:24:pool[implement D2 changes to controllers including methods for authorization in application controller]
+
+##### 09/05/2018: 15:24 - 15:26:pool[implement D2 changes to models]
