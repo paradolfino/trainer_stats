@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:edit, :update, :destroy]
     before_action :authenticate_user!
-    before_action :require_admin, only: [:new, :index, :destroy]
+    before_action :require_admin, only: [:new, :index]
     
     def index
         @users = User.all
@@ -14,12 +14,13 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
+            create_event("created", "user: #{@user.role} #{@user.name}")
             redirect_to '/'
         end
     end
     
     def edit
-        
+        require_same_user(@user)
     end
     
     def update
@@ -28,8 +29,9 @@ class UsersController < ApplicationController
           params[:user].delete(:password_confirmation)
         end
         if @user.update(user_params)
-           flash[:notice] = "User #{@user.name} has been updated!" 
-           redirect_to '/admin/users'
+            create_event("updated", "user: #{@user.name}")
+            flash[:notice] = "User #{@user.name} has been updated!" 
+            redirect_to '/admin/users'
         else
             flash[:alert] = "There were errors when attempting to update, please review before submitting."
             render 'edit'
@@ -37,7 +39,9 @@ class UsersController < ApplicationController
     end
     
     def destroy
-        flash[:notice] = "#{@user.name} has been destroyed."
+        require_same_user(@user)
+        create_event("destroyed", "user: #{@user.name}")
+        flash[:notice] = "#{@user.name} has been deleted."
         @user.destroy
         redirect_to '/admin/users'
     end
