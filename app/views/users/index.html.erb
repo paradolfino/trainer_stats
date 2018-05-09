@@ -1,4 +1,5 @@
 <h3 class="text-center">Users List</h3>
+<p class="text-center"><%= link_to "View Audit Trail", audit_path %></p>
 
 <table class="table text-center">
     <thead>
@@ -17,7 +18,7 @@
                 <td><%= t.name %></td>
                 <td><%= t.email %></td>
                 <td><%= t.role %></td>
-                <td> <%= link_to fa_icon("edit", text: "Edit"), edit_user_path(t) %> | <%= link_to fa_icon("trash", text: "Delete"), user_path(t), method: :delete %></td>
+                <td> <%= link_to fa_icon("edit", text: "Edit"), edit_user_path(t) %> | <%= link_to(fa_icon("trash", text: "Delete"), user_path(t), method: :delete, data: { confirm: "Deleting this user will delete #{t.events.count} associated events in the Audit Trail as well. Are you sure you wish to continue?" }) if t.role != "Admin"%></td>
             </tr>
         <% end %>
     </tbody>
