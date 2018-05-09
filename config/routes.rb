@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'events/audit'
   devise_for :users, :path_prefix => 'portal', :skip => 'registrations'
 =begin 
   root 'trainings#new'
