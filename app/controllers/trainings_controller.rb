@@ -15,6 +15,7 @@ class TrainingsController < ApplicationController
     def new
         @log = Log.find(params[:log_id])
         @training = @log.trainings.build
+        @trainers = User.all
     end
     
     def create
@@ -30,7 +31,8 @@ class TrainingsController < ApplicationController
     
     def edit
         @log = Log.find(params[:id])
-        @training = @log.trainings.find(params[:log_id]) 
+        @training = @log.trainings.find(params[:log_id])
+        @trainers = User.all
     end
     
     def update

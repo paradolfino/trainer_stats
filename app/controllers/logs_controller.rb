@@ -27,8 +27,14 @@ class LogsController < ApplicationController
     end
     
     def show
-        @trainings = @log.trainings.order('id DESC')
+        @users = User.all
+        if params[:sort]
+            @trainings = @log.trainings.where(trainer: params[:sort]).order('id DESC')
+        else
+            @trainings = @log.trainings.order('id DESC')
+        end
         @count = @trainings.count
+        
         respond_to do |format|
             format.html
             format.json { 

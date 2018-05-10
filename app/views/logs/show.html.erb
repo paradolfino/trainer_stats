@@ -1,6 +1,8 @@
 <h3 class="text-center"><%= @log.title %> Log <small>[with <%= @log.trainings.count %> trainings logged.]</small></h3>
 <h4 class="text-center">Active: <%= @log.active %></h4>
+<% if params[:sort] %><h5 class="text-center">Showing <%= "#{pluralize(@count, 'training')}" %> for <%= params[:sort] %></h5><% end %>
 <p class="text-center"><%= link_to fa_icon("download", text: "CSV"), log_path(format: "csv") %> | <%= link_to fa_icon("download", text: "XLS"), log_path(format: "xls") %></p>
+
 
 <table class="table text-center">
     <thead>
@@ -8,7 +10,7 @@
             <th>Training Date/Time Logged</th>
             <th>Member Name</th>
             <th>Company Name</th>
-            <th>Trainer</th>
+            <th><%= select_tag "filter", options_from_collection_for_select(@users, :name, :name), :onchange => "filter()", prompt: "Trainer" %></th>
             <th>Type/Stage</th>
             <th>Status</th>
             <th>Has Notes</th>
@@ -38,3 +40,10 @@
 <div class="options">
     <% if user_signed_in? %><%= link_to "Log a New Training", new_log_training_path(@log) %> |<% end %> <%= link_to "Go back to all Logs", logs_path %>
 </div>
+
+<script>
+    function filter() {
+        val = $("#filter").find(":selected").text();
+        window.location.replace("/logs/" + <%= @log.id %> + "?sort=" + val);
+    }
+</script>

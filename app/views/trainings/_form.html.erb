@@ -4,7 +4,7 @@
     <%= t.label :company %>
     <p><%= t.text_field :company %></p>
     <%= t.label "Trainer" %>
-    <p><%= t.select(:trainer, options_for_select(["Chris V.", "Mac S.", "Audra E.", "Aaron V."])) %></p>
+    <p><%= t.select(:trainer, options_from_collection_for_select(@trainers, :name, :name), prompt: "Select A Trainer") %></p>
     <%= t.label "Type of Training" %>
     <p><%= t.select(:stage, options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-one"])) %></p>
     <%= t.label "Status" %>

@@ -14,7 +14,7 @@
     
 </div>
 <div class="options">
-    <% if user_signed_in? && is_admin? %>
+    <% if user_signed_in? %>
         <%= link_to fa_icon("edit", text: "Edit Training"), edit_log_training_path(@training) %> 
     <% end %>
     <%= link_to "Back to the Trainings Log", log_path(@training.log) %>
