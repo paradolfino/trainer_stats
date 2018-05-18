@@ -1,0 +1,17 @@
+<div class="cancellation">
+    <h5>Member</h5>
+    <p><%= @cancellation.member %></p>
+    <h5>Company</h5>
+    <p><%= @cancellation.company %></p>
+    <h5>Reason</h5>
+    <p><%= @cancellation.reason %></p>
+    <h5>Notes</h5>
+    <p id="notes"><%= @cancellation.notes %></p>
+    
+</div>
+<div class="options">
+    <% if user_signed_in?  %>
+        <%= link_to fa_icon("edit", text: "Edit Cancellation"), edit_cancellation_log_cancellation_path(@cancellation) %> 
+    <% end %>
+    <%= link_to "Back to the Trainings Log", cancellation_log_path(@cancellation.cancellation_log) %>
+</div>

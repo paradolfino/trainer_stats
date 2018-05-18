@@ -1,0 +1,8 @@
+<h3 class="text-center">Cancellations: <%= @cancellations %></h3>
+
+<h5 class="text-center">Log a Cancellation:</h5>
+<%= render 'form' %>
+
+<div class="options">
+    <%= link_to "View the Cancellations Log", cancellation_log_path(@log) %>
+</div>

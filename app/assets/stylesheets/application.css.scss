@@ -26,7 +26,10 @@
     list-style: none;
 }
 
-
+#filter {
+    border: none;
+    font-weight: bold;
+}
 
 #content {
     height: 900px;
@@ -69,12 +72,15 @@
     }
 }
 
-.training #notes {
-    margin: 0 auto;
-    height: 100px;
-    width: 300px;
-    overflow-y: auto;
-    word-wrap: break-word
+.training, .cancellation {
+    #notes {
+        margin: 0 auto;
+        height: 100px;
+        width: 300px;
+        overflow-y: auto;
+        word-wrap: break-word;
+    }
+    
 }
 
 .options {
@@ -98,6 +104,7 @@
 }
 
 body * {
+    font-family: "Segoe UI", "Arial", sans-serif;
     transition: all 0.5s;
 }
 
@@ -114,7 +121,7 @@ h3 {
     }
 }
 
-form, .training {
+form, .training, .cancellation {
     margin: 50px auto;
     padding: 10px;
     width: 500px;

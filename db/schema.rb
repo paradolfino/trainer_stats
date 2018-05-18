@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_09_151622) do
+ActiveRecord::Schema.define(version: 2018_05_18_205104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cancellation_logs", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cancellations", force: :cascade do |t|
+    t.string "member"
+    t.string "company"
+    t.string "reason"
+    t.text "notes"
+    t.bigint "cancellation_log_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cancellation_log_id"], name: "index_cancellations_on_cancellation_log_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "action"
@@ -70,5 +87,6 @@ ActiveRecord::Schema.define(version: 2018_05_09_151622) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cancellations", "cancellation_logs"
   add_foreign_key "events", "users"
 end

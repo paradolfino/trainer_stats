@@ -1,0 +1,11 @@
+<%= form_for ([@log, @cancellation]) do |t| %>
+    <%= t.label :member %>
+    <p><%= t.text_field :member %></p>
+    <%= t.label :company %>
+    <p><%= t.text_field :company %></p>
+    <span>Reason for Cancellation</span>
+    <p><%= t.select(:reason, options_for_select(["Costs Too Much", "Not Enough Features", "Going with Competitor", "Not Enough Time"]), prompt: "Select A Reason") %></p>
+    <%= t.label "Notes" %>
+    <p><%= t.text_area :notes %></p>
+    <p><%= t.submit "Submit" %></p>
+<% end %>

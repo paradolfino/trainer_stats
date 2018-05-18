@@ -15,13 +15,10 @@
     <div class="bar">
       <ul id="head">
         <li>
-          <%= link_to "View Logs", logs_path %>
+          <%= link_to "Trainings", logs_path %>
         </li>
         <li>
-          <%= link_to "About", about_path %>
-        </li>
-        <li>
-          <%= link_to "Support", support_path %>
+          <%= link_to "Cancellations", cancellation_logs_path %>
         </li>
         <% if !user_signed_in? %>
           <li class="pull-right"><%= link_to "Login", new_user_session_path %></li>

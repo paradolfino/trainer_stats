@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member: MyString
+  company: MyString
+  reason: MyString
+  notes: MyText
+  cancellation_log: one
+
+two:
+  member: MyString
+  company: MyString
+  reason: MyString
+  notes: MyText
+  cancellation_log: two
