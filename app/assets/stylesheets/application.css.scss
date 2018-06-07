@@ -72,6 +72,21 @@
     }
 }
 
+.search-bar {
+    display: flex;
+    justify-content: center;
+}
+
+.search-btn {
+    margin-left: 20px;
+    background: #4286f4;
+    color: #fff;
+    border:none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .training, .cancellation {
     #notes {
         margin: 0 auto;

@@ -20,6 +20,9 @@
         <li>
           <%= link_to "Cancellations", cancellation_logs_path %>
         </li>
+        <li>
+          <%= render 'shared/search' %>
+        </li>
         <% if !user_signed_in? %>
           <li class="pull-right"><%= link_to "Login", new_user_session_path %></li>
         <% else %>

@@ -2,6 +2,13 @@ class ApplicationController < ActionController::Base
     include Response
     before_action :configure_permitted_parameters, if: :devise_controller?
     helper_method :is_admin?
+    helper_method :search_compare
+    
+    def search_compare(value, string)
+        if value.downcase.include? string.downcase
+           return true
+        end
+    end
     
     def not_found
         redirect_to '/public/404.html'

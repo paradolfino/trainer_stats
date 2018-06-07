@@ -2,7 +2,32 @@ class LogsController < ApplicationController
     
     before_action :set_log, only: [:show, :edit, :destroy]
     before_action :total_trainings, only: [:index, :inactive]
-    before_action :authenticate_user!, except: [:index, :show]
+    before_action :authenticate_user!, except: [:index, :show, :search]
+    
+    def search
+        @trainings = {}
+        @logs = Log.all
+        @users = User.all
+        @query = params[:query]
+        @string = params[:string]
+        @results = 0
+        
+        @logs.each do |log|
+            
+            log.trainings.each do |t|
+                @training_attrs = {}
+                t.attributes.each do |name, value|
+                    if name == "created_at"
+                        @training_attrs[name] = value.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M")
+                    else
+                        @training_attrs[name] = value
+                    end
+                end
+                @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
+            end
+            
+        end
+    end
     
     def index
         @logs = Log.where(active: true).order('id DESC')

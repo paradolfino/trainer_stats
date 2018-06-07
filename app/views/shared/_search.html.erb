@@ -1,0 +1,38 @@
+<div class="search-bar">
+    <%= select_tag "search", options_for_select(["Member Name", "Company Name", "Trainer", "Stage", "Status"])%>
+    <%= text_field_tag "search-field", nil, class: "search-field" %>
+
+    <button class="search-btn" onclick="search()">Search</button>
+</div>
+
+<script>
+    function search() {
+            query = $("#search").find(":selected").text();
+            string = $("#search-field").val();
+            query = sanitize(query);
+            window.location.replace("/search?query=" + query + "&string=" + string);
+    }
+    
+    function sanitize(query) {
+        switch(query) {
+            case "Member Name":
+                return "member";
+                break;
+            case "Company Name":
+                return "company";
+                break;
+            case "Status":
+                return "status";
+                break;
+            case "Stage":
+                return "stage";
+                break;
+            case "Trainer":
+                return "trainer";
+                break;
+            default:
+                return "member";
+                break;
+        } 
+    }
+</script>
