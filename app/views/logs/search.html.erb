@@ -5,7 +5,7 @@
             <th>Date/Time Logged</th>
             <th>Member Name</th>
             <th>Company Name</th>
-            <th><%= select_tag "filter", options_from_collection_for_select(@users, :name, :name), :onchange => "", prompt: "Trainer" %></th>
+            <th><%= select_tag "filter", options_from_collection_for_select(@users, :name, :name), :onchange => "filter()", prompt: "Trainer" %></th>
             <th>Type/Stage</th>
             <th>Status</th>
         </tr>
@@ -26,3 +26,10 @@
         <% end %>
     </tbody>
 </table>
+
+<script>
+    function filter() {
+        val = $("#filter").find(":selected").text();
+        window.location.replace("/search?query=trainer&string=" + val.toLowerCase());
+    }
+</script>
