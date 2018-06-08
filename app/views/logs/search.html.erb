@@ -12,7 +12,7 @@
     </thead>
     <tbody>
         <% if params[:query] %>
-            <% @trainings.reverse_each do |t| %>
+            <% @trainings.sort.reverse_each do |t| %>
                 <tr>
                     <td><%= t[1][:info]["created_at"] %></td>
                     <td><%= t[1][:info]["member"] %></td>

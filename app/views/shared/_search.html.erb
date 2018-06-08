@@ -1,6 +1,6 @@
 <div class="search-bar">
     <%= select_tag "search", options_for_select(["Member Name", "Company Name", "Trainer", "Stage", "Status"])%>
-    <%= text_field_tag "search-field", nil, class: "search-field" %>
+    <%= text_field_tag "search-field", nil, class: "search-field" , placeholder: "Search for a Training"%>
 
     <button class="search-btn" onclick="search()">Search</button>
 </div>
