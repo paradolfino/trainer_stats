@@ -2,7 +2,7 @@
     <%= select_tag "search", options_for_select(["Member Name", "Company Name", "Trainer", "Stage", "Status"])%>
     <%= text_field_tag "search-field", nil, class: "search-field" , placeholder: "Search for a Training"%>
 
-    <button class="search-btn" onclick="search()">Search</button>
+    <button id="search-btn" class="search-btn" onclick="search()">Search</button>
 </div>
 
 <script>
@@ -35,4 +35,13 @@
                 break;
         } 
     }
+    
+    var input = document.getElementById("search-field");
+    input.addEventListener("keyup", function(event) {
+      event.preventDefault();
+      // Number 13 is the "Enter" key on the keyboard
+      if (event.keyCode === 13) {
+        document.getElementById("search-btn").click();
+      }
+    }); 
 </script>
