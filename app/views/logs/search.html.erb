@@ -17,9 +17,9 @@
             <% @trainings.sort.reverse_each do |t| %>
                 <tr>
                     <td><%= t[1][:info]["created_at"] %></td>
-                    <td><%= t[1][:info]["member"] %></td>
-                    <td><%= t[1][:info]["company"] %></td>
-                    <td><%= t[1][:info]["trainer"] %></td> 
+                    <td><%= trunk(t[1][:info]["member"]) %></td>
+                    <td><%= trunk(t[1][:info]["company"]) %></td>
+                    <td><%= trunk(t[1][:info]["trainer"]) %></td> 
                     <td><%= t[1][:info]["stage"] %></td> 
                     <td><%= t[1][:info]["status"] %></td> 
                     <td><%= link_to fa_icon("search", text: "View"), "/logs/#{t[1][:info]["id"]}/trainings/#{t[1][:info]["log_id"]}" %><% if is_admin? %> | <%= link_to fa_icon("trash", text: "Delete"), "/logs/#{t[1][:info]["id"]}/trainings/#{t[1][:info]["log_id"]}", method: :delete  %><% end %></td>

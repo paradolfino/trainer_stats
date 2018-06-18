@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
     helper_method :is_admin?
     helper_method :search_compare
+    helper_method :trunk
     
     def search_compare(value, string)
         if value.downcase.include? string.downcase
@@ -43,6 +44,10 @@ class ApplicationController < ActionController::Base
     
     def create_event(action, content)
         @event = Event.create(action: action, content: content, user_id: current_user.id)
+    end
+    
+    def trunk(string, max=30)
+       string.truncate(max) 
     end
 
     
