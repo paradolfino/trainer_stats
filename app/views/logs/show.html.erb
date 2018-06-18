@@ -22,9 +22,9 @@
         <% @trainings.each do |t| %>
             <tr>
                 <td><%= t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M") %></td>
-                <td><%= t.member %></td>
-                <td><%= t.company %></td>
-                <td><%= t.trainer %></td> 
+                <td><%= trunk(t.member) %></td>
+                <td><%= trunk(t.company) %></td>
+                <td><%= trunk(t.trainer) %></td> 
                 <td><%= t.stage %></td> 
                 <td><%= t.status %></td> 
                 <% if t.notes == "" %>

@@ -14,7 +14,7 @@
             <tr>
                 <td><%= t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M") %></td>
                 <td><%= t.user.email %></td>
-                <td><%= "#{t.action} #{t.content}" %></td> 
+                <td><%= "#{t.action} #{trunk(t.content, 70)}" %></td> 
             </tr>
         <% end %>
     </tbody>
