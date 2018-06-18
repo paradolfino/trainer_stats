@@ -32,12 +32,11 @@
 }
 
 #content {
-    height: 900px;
+    height: 1100px;
     overflow: auto;
 }
 
 .bar {
-    margin-top: 10px;
     height: 50px;
     background-color: #296893;
     
@@ -48,6 +47,16 @@
         li {
             display: inline-block;
             padding: 10px;
+            
+            a {
+                
+                &:hover {
+                    padding: 10px 10px 20px 10px;
+                    background-color: #205375;
+                }
+            }
+            
+            
         }
     }
     
@@ -67,7 +76,9 @@
         
         &:hover {
             color: white;
+            
             text-decoration: none;
+            
         }
     }
 }
@@ -78,7 +89,7 @@
 }
 
 .search-btn {
-    margin-left: 20px;
+    margin-left: 0px;
     background: #4286f4;
     color: #fff;
     border:none;
@@ -87,11 +98,43 @@
     }
 }
 
+.title {
+    display: flex;
+    height: 50px;
+    background: #205375;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-field {
+    width: 400px;
+}
+
+.form-select {
+    width: 200px;
+}
+
+.form-submit {
+    height: 50px;
+    width: 200px;
+    background: #4286f4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-submit, .search-btn {
+    &:hover {
+        background: #296893;
+    }
+}
+
 .training, .cancellation {
     #notes {
         margin: 0 auto;
-        height: 100px;
-        width: 300px;
+        height: 200px;
+        width: 100%;
         overflow-y: auto;
         word-wrap: break-word;
     }
@@ -118,6 +161,8 @@
     }
 }
 
+
+
 body * {
     font-family: "Segoe UI", "Arial", sans-serif;
     transition: all 0.5s;
@@ -139,8 +184,52 @@ h3 {
 form, .training, .cancellation {
     margin: 50px auto;
     padding: 10px;
-    width: 500px;
+    width: 700px;
     text-align: center;
     border: 1px solid #68a1ff;
+    
+    label {
+        margin: 5px 0 10px 0;
+        padding: 5px;
+        width: 200px;
+        background: #205375;
+        color: #fff;
+    }
 }
 
+form {
+
+    
+    textarea {
+        width: 100%;
+        height: 120px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 1px solid black;
+        background-color: #f8f8f8;
+        resize: none;
+    }
+    
+    select {
+        width: 200px;
+        padding: 16px 20px;
+    }
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+tr:nth-child(even) {background-color: #ebf0fa;}

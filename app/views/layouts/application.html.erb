@@ -14,13 +14,13 @@
     
     <div class="bar">
       <ul id="head">
-        <li>
+        <li class="pull-left">
           <%= link_to "Trainings", logs_path %>
         </li>
-        <li>
+        <li class="pull-left">
           <%= link_to "Cancellations", cancellation_logs_path %>
         </li>
-        <li>
+        <li class="pull-left">
           <%= render 'shared/search' %>
         </li>
         <% if !user_signed_in? %>
@@ -33,13 +33,14 @@
       </ul>
       
     </div>
+    <%= render 'shared/title' %>
     <%= render 'shared/message' %>
     <div id="content">
       <%= yield %>
     </div>
     <div class="bar">
       <ul id="foot">
-        <li class="pull-left">TrainerStats v. 2</li>
+        <li class="pull-left">TrainerStats v. 2.9</li>
         <li class="pull-right"><%= "Signed in as #{current_user.name}" if user_signed_in? %> <%= "[Admin]" if is_admin? %> </li>
       </ul>
     </div>

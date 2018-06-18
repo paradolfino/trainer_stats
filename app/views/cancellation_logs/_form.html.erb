@@ -1,5 +1,5 @@
 <%= form_for @log do |f| %>
     <%= f.label "Title:" %><br/>
-    <%= f.text_field :title, value: "#{Time.now.in_time_zone("Central Time (US & Canada)").strftime("%B")} Cancellations" %><br/><br />
-    <%= f.submit "Submit" %>
+    <%= f.text_field :title, value: "#{Time.now.in_time_zone("Central Time (US & Canada)").strftime("%B")} Cancellations", class: "form-field" %><br/><br />
+    <%= f.submit "Submit", class: "form-submit" %>
 <% end %>

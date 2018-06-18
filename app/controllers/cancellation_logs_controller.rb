@@ -5,17 +5,19 @@ class CancellationLogsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     
     def index
+        
         @logs = CancellationLog.order('id DESC')
         @total = CancellationLog.all.count
         respond_to do |format|
             format.html
             format.json { json_response(@all_logs)}
         end
-        
+        @title = "Cancellation Logs"
     end
     
     
     def show
+        
         if params[:sort]
             @cancellations = @log.cancellations.where(reason: params[:sort]).order('id DESC')
         else
@@ -31,12 +33,13 @@ class CancellationLogsController < ApplicationController
             format.csv { send_data @cancellations.to_csv, filename: "#{@log.title}.csv" }
             format.xls { send_data @cancellations.to_csv(col_sep: "\t"), filename: "#{@log.title}.xls" }
         end
-        
+        @title = @log.title
         
     end
     
     def new
-       @log = CancellationLog.new 
+       @log = CancellationLog.new
+       @title = "New Cancellation Log"
     end
     
     def create
@@ -49,7 +52,9 @@ class CancellationLogsController < ApplicationController
         end
     end
     
-    def edit; end
+    def edit
+        @title = "Edit Cancellation Log"    
+    end
     
     def update
         

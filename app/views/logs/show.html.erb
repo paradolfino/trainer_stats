@@ -1,5 +1,6 @@
-<h3 class="text-center"><%= @log.title %> Log <small>[with <%= @log.trainings.count %> trainings logged.]</small></h3>
-<h4 class="text-center">Active: <%= @log.active %></h4>
+<br/>
+<h5 class="text-center">(<%= @log.trainings.count %>) trainings logged.</h5>
+<h5 class="text-center">Active: <%= @log.active %></h5>
 <% if params[:sort] %><h5 class="text-center">Showing <%= "#{pluralize(@count, 'training')}" %> for <%= params[:sort] %></h5><% end %>
 <p class="text-center"><%= link_to fa_icon("download", text: "CSV"), log_path(format: "csv") %> | <%= link_to fa_icon("download", text: "XLS"), log_path(format: "xls") %></p>
 

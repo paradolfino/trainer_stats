@@ -2,20 +2,18 @@ class TrainingsController < ApplicationController
     #before_action :set_training, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, except: [:index, :show]
     
-    def index
-        @log = Log.find(params[:log_id])
-        @trainigns = @log.trainings
-    end
     
     def show
         @log = Log.find(params[:id])
         @training = @log.trainings.find(params[:log_id])
+        @title = "Showing Training"
     end
     
     def new
         @log = Log.find(params[:log_id])
         @training = @log.trainings.build
         @trainers = User.all
+        @title = "New Training"
     end
     
     def create
@@ -33,6 +31,7 @@ class TrainingsController < ApplicationController
         @log = Log.find(params[:id])
         @training = @log.trainings.find(params[:log_id])
         @trainers = User.all
+        @title = "Edit Training"
     end
     
     def update

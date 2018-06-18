@@ -27,6 +27,7 @@ class LogsController < ApplicationController
             end
             
         end
+        @title = "Search"
     end
     
     def index
@@ -37,7 +38,7 @@ class LogsController < ApplicationController
             format.html
             format.json { json_response(@all_logs)}
         end
-        
+        @title = "Trainings Logs"
     end
     
     def inactive
@@ -49,6 +50,7 @@ class LogsController < ApplicationController
             format.html
             format.json { json_response(@all_logs)}
         end
+        @title = "Inactive Trainings Logs"
     end
     
     def show
@@ -68,12 +70,13 @@ class LogsController < ApplicationController
             format.csv { send_data @trainings.to_csv, filename: "#{@log.title}.csv" }
             format.xls { send_data @trainings.to_csv(col_sep: "\t"), filename: "#{@log.title}.xls" }
         end
-        
+        @title = "#{@log.title}"
         
     end
     
     def new
-       @log = Log.new 
+       @log = Log.new
+       @title = "New Trainings Log"
     end
     
     def create
@@ -86,7 +89,9 @@ class LogsController < ApplicationController
         end
     end
     
-    def edit; end
+    def edit
+        @title = "Edit Trainings Log"
+    end
     
     def update
         
