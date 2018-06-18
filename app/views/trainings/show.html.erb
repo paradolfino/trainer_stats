@@ -1,20 +1,20 @@
 <div class="training">
-    <h5>Member</h5>
+    <label>Member</label>
     <p><%= @training.member %></p>
-    <h5>Company</h5>
+    <label>Company</label>
     <p><%= @training.company %></p>
-    <h5>Trainer</h5>
+    <label>Trainer</label>
     <p><%= @training.trainer %></p>
-    <h5>Stage</h5>
+    <label>Stage</label>
     <p><%= @training.stage %></p>
-    <h5>Status</h5>
+    <label>Status</label>
     <p><%= @training.status %></p>
-    <h5>Notes</h5>
+    <label>Notes</label>
     <p id="notes"><%= @training.notes %></p>
     
 </div>
 <div class="options">
-    <% if user_signed_in? %>
+    <% if user_signed_in?  %>
         <%= link_to fa_icon("edit", text: "Edit Training"), edit_log_training_path(@training) %> 
     <% end %>
     <%= link_to "Back to the Trainings Log", log_path(@training.log) %>

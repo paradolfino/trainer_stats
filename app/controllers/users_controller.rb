@@ -5,10 +5,12 @@ class UsersController < ApplicationController
     
     def index
         @users = User.all
+        @title = "Users"
     end
     
     def new
         @user = User.new
+        @title = "New User"
     end
     
     def create
@@ -21,6 +23,7 @@ class UsersController < ApplicationController
     
     def edit
         require_same_user(@user)
+        @title = "Edit User"
     end
     
     def update

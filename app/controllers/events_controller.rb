@@ -3,6 +3,7 @@ class EventsController < ApplicationController
     
     def audit
         @events = Event.all.order('id DESC')
+        @title = "Audit Trail"
     end
     
     def create
