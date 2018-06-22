@@ -5,10 +5,18 @@ class ApplicationController < ActionController::Base
     helper_method :search_compare
     helper_method :trunk
     
-    def search_compare(value, string)
-        if value.downcase.include? string.downcase
-           return true
+    def search_compare(value, string, strict=false)
+        if !strict
+            if value.downcase.include? string.downcase
+                return true
+            end
+        else
+            if value.downcase == string.downcase
+               return true 
+            end
+           
         end
+        
     end
     
     def not_found

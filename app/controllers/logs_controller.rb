@@ -10,8 +10,11 @@ class LogsController < ApplicationController
         @users = User.all
         @query = params[:query]
         @string = params[:string]
+        @stage = params[:stage]
+        @status = params[:status]
+        @trainer = params[:trainer]
+        @url = request.fullpath.to_s.split("?")[1]
         @results = 0
-        
         @logs.each do |log|
             
             log.trainings.each do |t|
@@ -23,7 +26,27 @@ class LogsController < ApplicationController
                         @training_attrs[name] = value
                     end
                 end
-                @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
+
+                ########## THIS IS AD HOC LOGIC. I am going to refactor.
+                if @stage && @status && @trainer
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage) && search_compare(@training_attrs["status"],@status, true) && search_compare(@training_attrs["trainer"],@trainer)
+                elsif @stage && @status && !@trainer
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage) && search_compare(@training_attrs["status"],@status, true)
+                elsif @stage && !@status && @trainer
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage) && search_compare(@training_attrs["trainer"],@trainer)
+                elsif @status && !@stage && @trainer
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["status"],@status, true) && search_compare(@training_attrs["trainer"],@trainer)
+                elsif @stage && !@status && !@trainer
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage)
+                elsif @status && !@stage && !@trainer
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["status"],@status, true)
+                elsif @trainer && !@stage && !@status
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["trainer"],@trainer)
+                else
+                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
+                end
+                ########## THIS IS AD HOC LOGIC. I am going to refactor.
+                
             end
             
         end

@@ -1,15 +1,15 @@
-<br />
-<h4 class="text-center">Showing <%= pluralize(@trainings.count, "trainings") %></h4>
+<br/>
+<h5 class="text-center">Showing <%= pluralize(@trainings.count, "trainings") %></h5>
 <table class="table text-center">
     <thead>
         <tr>
             <th>Date/Time Logged</th>
             <th>Member Name</th>
             <th>Company Name</th>
-            <th><%= select_tag "filter", options_from_collection_for_select(@users, :name, :name), :onchange => "filter()", prompt: "Trainer" %></th>
-            <th>Type/Stage</th>
-            <th>Status</th>
-            <th></th>
+            <th><%= select_tag "trainer", options_from_collection_for_select(@users, :name, :name), :onchange => "sort('trainer')", prompt: "Trainer", data: {url: @url}, class: "header-select" %></th>
+            <th><%= select_tag "stage", options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-One"]), :onchange => "sort('stage')", prompt: "Stage", data: {url: @url}, class: "header-select" %></th>
+            <th><%= select_tag "status", options_for_select(["Complete", "Incomplete", "No Show","Demonstration"]), :onchange => "sort('status')", prompt: "Status", data: {url: @url}, class: "header-select" %></th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
@@ -19,7 +19,7 @@
                     <td><%= t[1][:info]["created_at"] %></td>
                     <td><%= trunk(t[1][:info]["member"]) %></td>
                     <td><%= trunk(t[1][:info]["company"]) %></td>
-                    <td><%= trunk(t[1][:info]["trainer"]) %></td> 
+                    <td><%= t[1][:info]["trainer"] %></td> 
                     <td><%= t[1][:info]["stage"] %></td> 
                     <td><%= t[1][:info]["status"] %></td> 
                     <td><%= link_to fa_icon("search", text: "View"), "/logs/#{t[1][:info]["id"]}/trainings/#{t[1][:info]["log_id"]}" %><% if is_admin? %> | <%= link_to fa_icon("trash", text: "Delete"), "/logs/#{t[1][:info]["id"]}/trainings/#{t[1][:info]["log_id"]}", method: :delete  %><% end %></td>
@@ -30,8 +30,23 @@
 </table>
 
 <script>
-    function filter() {
-        val = $("#filter").find(":selected").text();
-        window.location.replace("/search?query=trainer&string=" + val.toLowerCase());
+    function sort(type) {
+        
+        var string = $("#" + type).find(":selected").text();
+        var url = $("#" + type).data('url');
+        if (url.includes("query=" + type)){
+            url = "query=" + type + "&string=" + string.toLowerCase();
+        }
+        if (url.includes(type + "=")) {
+            var query = url.split("&");
+            for (i = 0; i < query.length; i++) {
+                query[i].includes(type) ? query[i] = type + "=" + string.toLowerCase() : null;
+            }
+            window.location.replace("/search?"+ query.join("&"));
+        
+        } else {
+            window.location.replace("/search?"+ url + "&" + type + "=" + string.toLowerCase());
+        }
+        
     }
 </script>
