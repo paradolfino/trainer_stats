@@ -2,21 +2,20 @@ class ApplicationController < ActionController::Base
     include Response
     before_action :configure_permitted_parameters, if: :devise_controller?
     helper_method :is_admin?
-    helper_method :search_compare
     helper_method :trunk
     
-    def search_compare(value, string, strict=false)
-        if !strict
-            if value.downcase.include? string.downcase
-                return true
-            end
-        else
-            if value.downcase == string.downcase
-               return true 
-            end
-           
-        end
-        
+    def multi_param_compare(params, data)
+      strict_key="status" #change this if need be
+      comparisons = []
+      params.each do |key, val|
+          strict_key != nil && key == strict_key ?
+            data.has_key?(key) && data[key].downcase == val.downcase ?
+            comparisons << true : comparisons << false :
+            data.has_key?(key) ? data[key].downcase.include?(val.downcase) ? 
+            comparisons << true : comparisons << false : nil
+          
+      end
+      comparisons.all? ? true : false
     end
     
     def not_found

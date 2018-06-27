@@ -8,11 +8,6 @@ class LogsController < ApplicationController
         @trainings = {}
         @logs = Log.all
         @users = User.all
-        @query = params[:query]
-        @string = params[:string]
-        @stage = params[:stage]
-        @status = params[:status]
-        @trainer = params[:trainer]
         @url = request.fullpath.to_s.split("?")[1]
         @results = 0
         @logs.each do |log|
@@ -23,29 +18,11 @@ class LogsController < ApplicationController
                     if name == "created_at"
                         @training_attrs[name] = value.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M")
                     else
-                        @training_attrs[name] = value
+                        @training_attrs[name] = value.to_s
                     end
                 end
 
-                ########## THIS IS AD HOC LOGIC. I am going to refactor.
-                if @stage && @status && @trainer
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage) && search_compare(@training_attrs["status"],@status, true) && search_compare(@training_attrs["trainer"],@trainer)
-                elsif @stage && @status && !@trainer
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage) && search_compare(@training_attrs["status"],@status, true)
-                elsif @stage && !@status && @trainer
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage) && search_compare(@training_attrs["trainer"],@trainer)
-                elsif @status && !@stage && @trainer
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["status"],@status, true) && search_compare(@training_attrs["trainer"],@trainer)
-                elsif @stage && !@status && !@trainer
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["stage"],@stage)
-                elsif @status && !@stage && !@trainer
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["status"],@status, true)
-                elsif @trainer && !@stage && !@status
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string) && search_compare(@training_attrs["trainer"],@trainer)
-                else
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[@query],@string)
-                end
-                ########## THIS IS AD HOC LOGIC. I am going to refactor.
+               @trainings[t.id] = {:info => @training_attrs} if multi_param_compare(params.stringify_keys, @training_attrs)
                 
             end
             
