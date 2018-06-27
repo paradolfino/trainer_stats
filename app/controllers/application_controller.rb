@@ -4,6 +4,20 @@ class ApplicationController < ActionController::Base
     helper_method :is_admin?
     helper_method :trunk
     
+    def search_compare(value, string, strict=false)
+        if !strict
+            if value.downcase.include? string.downcase
+                return true
+            end
+        else
+            if value.downcase == string.downcase
+               return true 
+            end
+           
+        end
+        
+    end
+    
     def multi_param_compare(params, data)
       strict_key="status" #change this if need be
       comparisons = []
