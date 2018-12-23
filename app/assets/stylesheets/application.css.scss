@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require font-awesome
+ *= require jquery-ui
  *= require_self
  */
 
@@ -46,9 +47,8 @@
             padding: 10px;
             
             a {
-                
+                padding: 10px 10px 20px 10px;
                 &:hover {
-                    padding: 10px 10px 20px 10px;
                     background-color: #205375;
                 }
             }

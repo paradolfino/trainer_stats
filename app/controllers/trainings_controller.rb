@@ -18,6 +18,7 @@ class TrainingsController < ApplicationController
     
     def create
         @log = Log.find(params[:log_id])
+        @params = training_params
         @training = @log.trainings.build(training_params)
         if @training.save
             create_event("created", "#{@training.stage} training for #{@training.member} from #{@training.company}")
@@ -56,7 +57,7 @@ class TrainingsController < ApplicationController
     private
     
         def training_params
-           params.require(:training).permit(:member, :company, :trainer, :stage, :notes, :status, :log_id) 
+           params.require(:training).permit(:member, :company, :trainer, :stage, :notes, :status, :date, :log_id) 
         end
         
         def set_training
