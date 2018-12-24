@@ -1,5 +1,6 @@
 class Training < ApplicationRecord
     belongs_to :log
+    
     def self.to_csv(options = {})
         items = 0
       CSV.generate(options) do |csv|

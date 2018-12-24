@@ -8,7 +8,7 @@
 <table class="table text-center">
     <thead>
         <tr>
-            <th>Training Date/Time Logged</th>
+            <th>Training Date</th>
             <th>Member Name</th>
             <th>Company Name</th>
             <th><%= select_tag "filter", options_from_collection_for_select(@users, :name, :name), :onchange => "filter()", prompt: "Trainer" %></th>
@@ -21,7 +21,7 @@
     <tbody>
         <% @trainings.each do |t| %>
             <tr>
-                <td><%= t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M") %></td>
+                <td><%= t.date != nil ? "#{t.date} at #{t.time}" : t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %l:%M %p") %></td>
                 <td><%= trunk(t.member) %></td>
                 <td><%= trunk(t.company) %></td>
                 <td><%= trunk(t.trainer) %></td> 
