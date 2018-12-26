@@ -21,7 +21,11 @@
     <tbody>
         <% @trainings.each do |t| %>
             <tr>
-                <td><%= t.date != nil ? "#{t.date} at #{t.time}" : t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %l:%M %p") %></td>
+                <% if t.date == nil || t.time == nil || t.date == "" || t.time == "" %>
+                <td><%= t.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %I:%M %p") %></td>
+                <% else %>
+                <td><%= "#{t.date} at #{t.time}" %></td>
+                <% end %>
                 <td><%= trunk(t.member) %></td>
                 <td><%= trunk(t.company) %></td>
                 <td><%= trunk(t.trainer) %></td> 

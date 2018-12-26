@@ -9,6 +9,10 @@
     <p><%= @training.stage %></p>
     <label>Status</label>
     <p><%= @training.status %></p>
+    <label>Training Date</label>
+    <p><%= @training.date ? @training.date : @training.created_at.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y") %></p>
+    <label>Training Time</label>
+    <p><%= @training.time ? @training.time : @training.created_at.in_time_zone("Central Time (US & Canada)").strftime("%I:%M %p") %></p>
     <label>Notes</label>
     <p id="notes"><%= @training.notes %></p>
     
