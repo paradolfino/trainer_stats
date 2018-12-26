@@ -10,7 +10,7 @@
     <%= t.label "Status" %>
     <p><%= t.select(:status, options_for_select(["Complete", "Incomplete", "No Show", "Demonstration"], @training.status)) %></p>
     <%= t.label "Training Date" %>
-    <p><%= t.text_field :date, class: "form-field", id: "customDate", value: @training.date ? @training.date : Time.now.strftime("%m/%d/%Y") %></p>
+    <p><%= t.text_field :date, class: "form-field", id: "customDate", value: @training.date ? @training.date : Time.now.in_time_zone.strftime("%m/%d/%Y") %></p>
     <%= t.label "Training Time" %>
     <p><%= t.text_field :time, class: "form-field", id: "customTime", value: @training.time ? @training.time : Time.now.in_time_zone("Central Time (US & Canada)").strftime("%I:%M %p")  %></p>
     <%= t.label "Notes" %>

@@ -3,7 +3,8 @@
 <table class="table text-center">
     <thead>
         <tr>
-            <th>Date/Time Logged</th>
+            <th>Date Created</th>
+            <th>Training Date</th>
             <th>Member Name</th>
             <th>Company Name</th>
             <th><%= select_tag "trainer", options_from_collection_for_select(@users, :name, :name), :onchange => "sort('trainer')", prompt: "Trainer", data: {url: @url}, class: "header-select" %></th>
@@ -17,6 +18,11 @@
             <% @trainings.sort.reverse_each do |t| %>
                 <tr>
                     <td><%= t[1][:info]["created_at"] %></td>
+                    <% if t[1][:info]["date"] == nil || t[1][:info]["date"] == "" || t[1][:info]["time"] == nil || t[1][:info]["time"] == "" %>
+                    <td><%= t[1][:info]["created_at"] %></td>
+                    <% else %>
+                    <td><%= "#{t[1][:info]["date"]} at #{t[1][:info]["time"]}" %></td>
+                    <% end %>
                     <td><%= trunk(t[1][:info]["member"]) %></td>
                     <td><%= trunk(t[1][:info]["company"]) %></td>
                     <td><%= t[1][:info]["trainer"] %></td> 

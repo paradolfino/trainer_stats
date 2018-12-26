@@ -16,7 +16,7 @@ class LogsController < ApplicationController
                 @training_attrs = {}
                 t.attributes.each do |name, value|
                     if name == "created_at"
-                        @training_attrs[name] = value.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %H:%M")
+                        @training_attrs[name] = value.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y at %I:%M %p")
                     else
                         @training_attrs[name] = value.to_s
                     end
