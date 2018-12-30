@@ -1,5 +1,5 @@
 <div class="search-bar">
-    <%= select_tag "search", options_for_select(["Member Name", "Company Name", "Trainer", "Stage", "Status"])%>
+    <%= select_tag "search", options_for_select(["Member Name", "Company Name", "Trainer", "Stage", "Status", "Date"])%>
     <%= text_field_tag "search-field", nil, class: "search-field" , placeholder: "Search for a Training"%>
 
     <button id="search-btn" class="search-btn" onclick="search()"><i class="fa fa-search"></i></button>
@@ -39,9 +39,32 @@
     var input = document.getElementById("search-field");
     input.addEventListener("keyup", function(event) {
       event.preventDefault();
-      // Number 13 is the "Enter" key on the keyboard
       if (event.keyCode === 13) {
         document.getElementById("search-btn").click();
       }
-    }); 
+    });
+    
+    $("#search").click(function()
+    {
+         var clickStr = $("#search").find(":selected").text();
+         if (clickStr.toLowerCase() == "date")
+         {
+            console.log(clickStr);
+            $( "#datefiltermodal" ).dialog({
+              dialogClass: "no-close",
+              buttons: [
+                {
+                  text: "OK",
+                  click: function() {
+                    $( this ).dialog( "close" );
+                  }
+                }
+              ]
+            });
+         }
+         
+         
+         
+    });
+   
 </script>
