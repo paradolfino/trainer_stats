@@ -10,6 +10,7 @@ class LogsController < ApplicationController
         @users = User.all
         @url = request.fullpath.to_s.split("?")[1]
         @results = 0
+        
         @logs.each do |log|
             
             log.trainings.each do |t|
@@ -22,10 +23,16 @@ class LogsController < ApplicationController
                     end
                 end
                 
-                if params[:status] || params[:stage]  || params[:trainer]
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[params[:query]],params[:string]) && multi_param_compare(params.stringify_keys, @training_attrs)
+                if params[:from_date]
+                    @trainings[t.id] = {:info => @training_attrs} if date_compare(t, params[:from_date], params[:to_date])
                 else
-                    @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[params[:query]],params[:string])
+                
+                    if params[:status] || params[:stage]  || params[:trainer]
+                        @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[params[:query]],params[:string]) && multi_param_compare(params.stringify_keys, @training_attrs)
+                    else
+                        @trainings[t.id] = {:info => @training_attrs} if search_compare(@training_attrs[params[:query]],params[:string])
+                    end
+                
                 end
                 
             end

@@ -6,10 +6,27 @@
 </div>
 
 <script>
-    function search() {
-            query = $("#search").find(":selected").text();
-            string = $("#search-field").val();
-            query = sanitize(query);
+    function search(q, str) {
+            if (q == null)
+            {
+                query = $("#search").find(":selected").text();
+                query = sanitize(query);
+            }
+            else
+            {
+                query = q;
+            }
+            
+            if (str == null) 
+            {
+                string = $("#search-field").val()
+            }
+            else
+            {
+                string = str;
+            }
+            
+            
             window.location.replace("/search?query=" + query + "&string=" + string);
     }
     
@@ -39,7 +56,7 @@
     var input = document.getElementById("search-field");
     input.addEventListener("keyup", function(event) {
       event.preventDefault();
-      if (event.keyCode === 13) {
+      if (event.keyCode === 13) {+
         document.getElementById("search-btn").click();
       }
     });
@@ -49,14 +66,18 @@
          var clickStr = $("#search").find(":selected").text();
          if (clickStr.toLowerCase() == "date")
          {
-            console.log(clickStr);
             $( "#datefiltermodal" ).dialog({
               dialogClass: "no-close",
+              title: "Test Title",
               buttons: [
                 {
                   text: "OK",
                   click: function() {
+                    let fromDate = encodeURI($("#fromDate").val());
+                    let toDate = encodeURI($("#toDate").val());
+                    
                     $( this ).dialog( "close" );
+                    window.location.replace("/search?query=date&string=null&from_date=" + fromDate + "&to_date=" + toDate);
                   }
                 }
               ]

@@ -4,3 +4,15 @@
     <label>To:</label>
     <p><%= text_field_tag "toDate" %></p>
 </div>
+
+<script type="text/javascript">
+    let fromDate = $("#fromDate");
+    let toDate = $("#toDate");
+    
+    fromDate.click(function(){
+       fromDate.datepicker().datepicker("show");
+    });
+    toDate.click(function(){
+       toDate.datepicker().datepicker("show");
+    });
+</script>

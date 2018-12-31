@@ -15,7 +15,23 @@ class ApplicationController < ActionController::Base
             end
            
         end
+    end
+    
+    def date_compare(record, fromdate, todate)
+        f = Date.strptime(fromdate, '%m/%d/%Y')
+        t = Date.strptime(todate, '%m/%d/%Y')
+        date_range = (f..t)
         
+        if record.date
+            if date_range.include? Date.strptime(record.date, '%m/%d/%Y')
+                return true
+            end
+        else
+            date = record.created_at.strftime("%m/%d/%Y")
+            if date_range.include? Date.strptime(date.to_s, '%m/%d/%Y')
+                return true
+            end
+        end
     end
     
     def multi_param_compare(params, data)
