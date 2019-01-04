@@ -1,8 +1,8 @@
-<div id="datefiltermodal">
+<div id="datefiltermodal" style="display: none">
     <label>From:</label>
-    <p><%= text_field_tag "fromDate" %></p>
+    <p><%= text_field_tag "fromDate", nil, class: "modal--Input" %></p>
     <label>To:</label>
-    <p><%= text_field_tag "toDate" %></p>
+    <p><%= text_field_tag "toDate", nil, class: "modal--Input" %></p>
 </div>
 
 <script type="text/javascript">

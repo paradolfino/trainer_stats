@@ -10,6 +10,7 @@ class LogsController < ApplicationController
         @users = User.all
         @url = request.fullpath.to_s.split("?")[1]
         @results = 0
+        @disallow_multi = false
         
         @logs.each do |log|
             
@@ -25,6 +26,7 @@ class LogsController < ApplicationController
                 
                 if params[:from_date]
                     @trainings[t.id] = {:info => @training_attrs} if date_compare(t, params[:from_date], params[:to_date])
+                    @disallow_multi = true
                 else
                 
                     if params[:status] || params[:stage]  || params[:trainer]
