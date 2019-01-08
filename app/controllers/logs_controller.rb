@@ -24,9 +24,18 @@ class LogsController < ApplicationController
                     end
                 end
                 
-                if params[:from_date]
-                    @trainings[t.id] = {:info => @training_attrs} if date_compare(t, params[:from_date], params[:to_date])
+                if params[:query] == "date"
+                    @new_params = params
+                    @string = @new_params[:string].split("_")
+                    @new_params["from_date"] = @string[0]
+                    @new_params["to_date"] = @string[1]
+                    
                     @disallow_multi = true
+                    if params[:status] || params[:stage]  || params[:trainer]
+                        @trainings[t.id] = {:info => @training_attrs} if date_compare(t, @new_params["from_date"], @new_params["to_date"]) && multi_param_compare(params.stringify_keys, @training_attrs, true)
+                    else
+                        @trainings[t.id] = {:info => @training_attrs} if date_compare(t, @new_params["from_date"], @new_params["to_date"])
+                    end
                 else
                 
                     if params[:status] || params[:stage]  || params[:trainer]

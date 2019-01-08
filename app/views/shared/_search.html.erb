@@ -77,9 +77,10 @@
                   click: function() {
                     let fromDate = encodeURI($("#fromDate").val());
                     let toDate = encodeURI($("#toDate").val());
+                    let string = fromDate + "_" + toDate;
                     
                     $( this ).dialog( "close" );
-                    window.location.replace("/search?query=date&string=null&from_date=" + fromDate + "&to_date=" + toDate);
+                    window.location.replace("/search?query=date&string="+string);
                   }
                 }
               ]

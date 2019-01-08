@@ -7,15 +7,9 @@
             <th>Training Date</th>
             <th>Member Name</th>
             <th>Company Name</th>
-            <% if @disallow_multi == false %>
-                <th><%= select_tag "trainer", options_from_collection_for_select(@users, :name, :name), :onchange => "sort('trainer')", prompt: "Trainer", data: {url: @url}, class: "header-select" %></th>
-                <th><%= select_tag "stage", options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-One"]), :onchange => "sort('stage')", prompt: "Stage", data: {url: @url}, class: "header-select" %></th>
-                <th><%= select_tag "status", options_for_select(["Complete", "Incomplete", "No Show","Demonstration"]), :onchange => "sort('status')", prompt: "Status", data: {url: @url}, class: "header-select" %></th>
-            <% else %>
-                <th>Trainer</th>
-                <th>Stage</th>
-                <th>Status</th>
-            <% end %>
+            <th><%= select_tag "trainer", options_from_collection_for_select(@users, :name, :name), :onchange => "sort('trainer')", prompt: "Trainer", data: {url: @url}, class: "header-select" %></th>
+            <th><%= select_tag "stage", options_for_select(["1st Launch", "2nd Launch", "Follow Up", "One-on-One"]), :onchange => "sort('stage')", prompt: "Stage", data: {url: @url}, class: "header-select" %></th>
+            <th><%= select_tag "status", options_for_select(["Complete", "Incomplete", "No Show","Demonstration"]), :onchange => "sort('status')", prompt: "Status", data: {url: @url}, class: "header-select" %></th>
             <th>Options</th>
         </tr>
     </thead>

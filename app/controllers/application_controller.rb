@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
         end
     end
     
-    def multi_param_compare(params, data)
+    def multi_param_compare(params, data, date = false)
       strict_key="status" #change this if need be
       comparisons = []
       params.each do |key, val|
